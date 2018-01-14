@@ -1,0 +1,197 @@
+body {
+  background-color: #19859a; }
+
+svg {
+  z-index: 13; }
+
+.desktop {
+  display: none; }
+
+.background-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9; }
+
+.background-row {
+  height: 15%; }
+
+.background-item img {
+  height: 100%; }
+
+.background-item-dark {
+  background-color: rgba(230, 230, 250, 0.2); }
+
+.link-container {
+  z-index: 11;
+  height: 100px; }
+
+.flag-container {
+  z-index: 11; }
+
+.small-edu-letter {
+  margin-right: 25px; }
+
+.dropdown-toggle img {
+  height: 50px; }
+
+.dropdown-item img {
+  height: 50px; }
+
+.bottom-slider {
+  z-index: 11;
+  height: 30px;
+  background-color: black; }
+
+.top-row-image-container {
+  z-index: 11;
+  background-image: url(img/square/gold_square_0640_2017.png);
+  background-size: 100% 100%;
+  padding: 6px 6px 6px 6px;
+  margin-right: 10px;
+  background-color: black; }
+  .top-row-image-container:last-of-type {
+    margin-right: 0px; }
+  .top-row-image-container img {
+    margin: auto;
+    display: block;
+    opacity: 0.3; }
+    .top-row-image-container img:hover {
+      opacity: 1; }
+
+#top-row-images {
+  margin-bottom: 15px; }
+
+.btn-secondary {
+  color: grey !important;
+  background-color: white !important;
+  border-color: grey !important; }
+
+#language-slider {
+  margin-bottom: 15px; }
+  #language-slider div {
+    z-index: 11; }
+    #language-slider div img {
+      z-index: 12; }
+
+#frame {
+  z-index: 11;
+  background-image: url(img/square/gold_square_0640_2017.png);
+  background-size: 100% 100%;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 5px; }
+
+.img-holder {
+  z-index: 11; }
+
+.button-holder {
+  z-index: 11; }
+
+#button-prev {
+  z-index: 11;
+  border-radius: 100px;
+  height: 60px;
+  width: 60px;
+  background-color: #19859a;
+  font-size: 32px;
+  color: white; }
+
+#button-next {
+  z-index: 11;
+  border-radius: 100px;
+  height: 60px;
+  width: 60px;
+  float: right;
+  background-color: #19859a;
+  font-size: 32px;
+  color: white; }
+
+#slider-container {
+  margin-bottom: 15px; }
+
+.bottom-row-image-container {
+  z-index: 11;
+  background-image: url(img/square/gold_square_0640_2017.png);
+  background-size: 100% 100%;
+  padding: 6px 6px 6px 6px;
+  margin-right: 10px;
+  background-color: black; }
+  .bottom-row-image-container:last-of-type {
+    margin-right: 0px; }
+  .bottom-row-image-container img {
+    opacity: 0.3; }
+    .bottom-row-image-container img:hover {
+      opacity: 1; }
+
+.edu-letter {
+  display: block;
+  z-index: 10;
+  position: relative;
+  left: 0%; }
+
+.button-container {
+  z-index: 11; }
+
+.black-happy-dog {
+  position: absolute;
+  z-index: 10;
+  left: 110px; }
+
+.cookie-container {
+  background-color: rgba(255, 235, 215, 0.9);
+  color: #7B68EE;
+  height: auto;
+  position: absolute;
+  top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 1; }
+
+.dogSelector {
+  z-index: 12; }
+
+@media (min-width: 576px) {
+  a#dropdownMenuLink {
+    width: 100%; }
+
+  #button-prev {
+    height: 100%;
+    width: 70%; }
+
+  #button-next {
+    height: 100%;
+    width: 70%; }
+
+  .links {
+    margin-bottom: 10px; } }
+@media (min-width: 992px) {
+  .tablet {
+    display: none; }
+
+  .desktop {
+    display: block; }
+
+  #frame {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 5px;
+    padding-left: 11px;
+    padding-right: 11px; }
+
+  #button-prev {
+    height: 100%;
+    width: 70%; }
+
+  #button-next {
+    height: 100%;
+    width: 70%; } }
+@media (min-width: 1200px) {
+  #slider-container {
+    margin-bottom: 37px; }
+
+  .links {
+    margin-bottom: 19px; } }
+
+/*# sourceMappingURL=style.css.map */
