@@ -1,7 +1,10 @@
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
-
+///////////////////////cookies
+Cookies.get('c_fontSieze');
+Cookies.get('c_keyboard');
+Cookies.get('c_autoscroll');
 /////////////letS GOES BELOW/////////////////////////////////////////////////////////////////////
 let $testButton;
 let $nextButton;
@@ -176,7 +179,7 @@ function createSlider(){
                             What types of cookies do we use?
                         </h2>
                         <h3 class="" style="color: #CD5C5C">
-                            Own cookies:   
+                            Own cookies:
                         </h3>
                         <p class="">
                             They are those that are sent to your team from our own computers or domains and from which we render the service that you request.
@@ -185,16 +188,16 @@ function createSlider(){
                             Third-party cookies:
                         </h3>
                         <p class="">
-                            They are those that are sent to your team from a team or domain that is not managed by us, but by another collaborating entity. Such as those used by social networks, or by external content such as Google Maps.  
+                            They are those that are sent to your team from a team or domain that is not managed by us, but by another collaborating entity. Such as those used by social networks, or by external content such as Google Maps.
                          </p>
                          <h3 class="" style="color: #CD5C5C">
-                            Session Cookies: 
+                            Session Cookies:
                         </h3>
                         <p class="">
-                            They are temporary cookies that remain in the cookie file of your browser until you leave the website, so none is recorded on the hard disk of your computer. The information obtained through these cookies, serve to analyze traffic patterns on the web. In the long run, this allows us to provide a better experience to improve the content and facilitate its use. 
+                            They are temporary cookies that remain in the cookie file of your browser until you leave the website, so none is recorded on the hard disk of your computer. The information obtained through these cookies, serve to analyze traffic patterns on the web. In the long run, this allows us to provide a better experience to improve the content and facilitate its use.
                          </p>
                           <h3 class="" style="color: #CD5C5C">
-                              Persistent Cookies: 
+                              Persistent Cookies:
                           </h3>
                         <p class="">
                             They are stored on the hard drive and our website reads them every time you make a new visit. A permanent website has a specific expiration date. The cookie will stop working after that date or when you delete it. These cookies are generally used to facilitate purchase and registration services.
@@ -237,7 +240,6 @@ function createSlider(){
 				'</div>'
 			);
 			$('#frame').append($marquee);
-			$('.marquee-container').css('visibility', 'visible');
 			$('#frame').hover(function(){return});
 			$('.marquee-up').hover(function(){
 				movingUp = setInterval(function() {
@@ -309,7 +311,7 @@ function createSlider(){
 				$('.info-warning').click(function(){return})
 			});
 		});
-	
+
 	//$('.helper').css('height', h);
 	$('.helper').toggle( 'clip');
 	$('.page-information').toggleClass( "page-information-clicked");
@@ -557,7 +559,7 @@ function createLanguageSlider() {
 			$('.dogSelector').css('position', 'absolute');
 			$('.dogSelector').css('left', selectorXposition-5);
 			$('.dogSelector').css('top', selectorYposition-56);
-		}, 
+		},
 		function(){
 			$('.dogSelector').remove();
 	});
@@ -667,7 +669,7 @@ function initLangSlider() {
 /////////////LANGUAGE SLIDER CODE END////////////////////////////////////////////////////////////////
 /////////////BACKGROUND CODE BEGIN///////////////////////////////////////////////////////////////////
 $('.background-row-light').each(function(){
-	
+
 	$(this).append(
 		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
 		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
@@ -779,14 +781,14 @@ let timerForSlider;
 $('.bottom-arrow-prev').hover(function(){
 	timerForSlider = setInterval(function() {
 		$('.bottom-trigger').flexslider('prev');
-}, 500);	
+}, 500);
 }, function(){
 	clearInterval(timerForSlider);
 });
 $('.bottom-arrow-next').hover(function(){
 	timerForSlider = setInterval(function() {
 		$('.bottom-trigger').flexslider('next');
-}, 500);	
+}, 500);
 }, function(){
 	clearInterval(timerForSlider);
 });
@@ -825,6 +827,13 @@ function renderMq() {
 		'</div>'
 	);
 	$('#frame').append($marquee);
+	$('.marquee-container').css('visibility', 'visible');
+	if (!Cookies.get('c_fontSize')) {///COOKIES FONT SIZE HERE!!!!
+		$('.mq-text').css('font-size', '14px');
+	} else {
+		var size = Cookies.get('c_fontSize');
+		$('.mq-text').css('font-size', size);
+	};
 	$('#frame').hover(function(){
 		if (!socialChecker) {
 			$('.marquee-container').css('visibility', 'visible');
@@ -885,10 +894,10 @@ $('.container-fluid, .dogs-background-container').click(function(){
 	$('.page-information').css('display', 'none');
 	$('.mini-edu ').css('background-image', 'none');
 	$('.mini-edu-img-2').css('display', 'none');
-})
+});
 $('.mini-edu, .page-information').click(function(){
 	let h = $('background-container').innerHeight()/*+'px'*/;//if wont work fix here
-	1/*console.log(h)
+	/*console.log(h)
 	if (h > $(window).height()) {
 		*/$('.helper').css('height', h+'px');
 	/*} else {
@@ -900,7 +909,8 @@ $('.mini-edu, .page-information').click(function(){
 	$('.mini-edu').toggleClass( "mini-edu-clicked");
 	$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
 	//$('.texted').text($('.texted').text() == 'Go Back' ? 'Go Back' : 'PAGE INFORMATION<br>(CLICK TO EXPAND)');
-})
+});
+
 $('.info-cloud-top-row-button').hover(function(){
 	$('.sandbox').remove();
 	sandbox = true;
@@ -941,14 +951,16 @@ $('.auto-scroll-button').click(function(){
 $('.size-minus').click(function(){
 	let size = parseInt($('.mq-text').css('font-size'))
 	$('.mq-text').css('font-size', size-1);
-	let sizeTest = parseInt($('.mq-text').css('font-size'))	
-	$('.sand-text').css('font-size', sizeTest-1);
+	Cookies.set('c_fontSize', size-1+'px')
+	let sizeTest = parseInt($('.sand-text').css('font-size'))
+	$('.sand-text').css('font-size', sizeTest-1+'px');
 });
 $('.size-plus').click(function(){
 	let size = parseInt($('.mq-text').css('font-size'))
 	$('.mq-text').css('font-size', size+1);
-	let sizeTest = parseInt($('.mq-text').css('font-size'))	
-	$('.sand-text').css('font-size', sizeTest+1);
+	Cookies.set('c_fontSize', size+1+'px')
+	let sizeTest = parseInt($('.sand-text').css('font-size'))
+	$('.sand-text').css('font-size', sizeTest+1+'px');
 })//////hereeeee!!!!
 $('.info-cloud-bot-row-button').click(function(){
 	if ($(this).attr('src').search('green') > 0) {
@@ -972,6 +984,12 @@ $('.info-cloud-bot-row-button').mouseenter(function(){
 				<a class="close-sandbox">[X]</a>
 			</div>
 		`);
+		if (!Cookies.get('c_fontSize')) {///COOKIES FONT SIZE HERE!!!!
+			$('.sand-text').css('font-size', '14px')
+		} else {
+			var size = Cookies.get('c_fontSize');
+			$('.sand-text').css('font-size', Cookies.get('c_fontSize'));
+		};
 	$('.close-sandbox').click(function(){
 		$('.sandbox').remove();
 		sandbox = true;
@@ -1055,7 +1073,7 @@ function closeLinkedin() {
 	$('.linkedin-container').css('overflow-y', 'hidden')
 };
 function showTwitter() {
-	$('.linkedin-container').css('z-index', '14') 
+	$('.linkedin-container').css('z-index', '14')
 	$('.linkedin-container').css('overflow-y', 'scroll')
 	$('.linkedin-container').css('background-color', 'white')
 	$('.linkedin-container').hover(function(){
@@ -1067,7 +1085,7 @@ function showTwitter() {
 	})
 };
 function showFacebook() {
-	$('.linkedin-container').css('z-index', '14') 
+	$('.linkedin-container').css('z-index', '14')
 	$('.linkedin-container').css('overflow-y', 'scroll')
 	$('.linkedin-container').css('background-color', 'white')
 	$('.linkedin-container').hover(function(){
