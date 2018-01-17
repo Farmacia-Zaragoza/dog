@@ -295,28 +295,26 @@ function createSlider(){
 	$('.info-main').hover(
 		function(){//need to be fixed asap!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			$('.info-warning').css('display', 'block')
-			console.log('click')
 			$('.info-warning').click(function(){
-				console.log('inside click')
-				var h = $('html').height()/*+'px'*/;
-				if (h > $(window).height()) {
-					$('.helper').css('height', h+'px');
-				} else {
-					$('.helper').css('height', $(window).height());
-				}
+				let h = $('html').height()
+				$('.helper').css('height', h+'px');
+				$('.helper').toggle();
+				$('.page-information').toggleClass( "page-information-clicked");
+				$('.mini-edu').toggleClass( "mini-edu-clicked");
+				$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
 			})
 		},function(){
 			$('.info-warning').mouseout(function(){
-				$('.info-warning').css('display', 'none')
-				$('.info-warning').click(function(){return})
+				$('.info-warning').css('display', 'none');
+				$( ".info-warning" ).off( "click" );
 			});
 		});
 
 	//$('.helper').css('height', h);
-	$('.helper').toggle( 'clip');
-	$('.page-information').toggleClass( "page-information-clicked");
-	$('.mini-edu').toggleClass( "mini-edu-clicked");
-	$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
+	//$('.helper').toggle( 'clip');
+	//$('.page-information').toggleClass( "page-information-clicked");
+	//$('.mini-edu').toggleClass( "mini-edu-clicked");
+	//$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
 	//$('.texted').text($('.texted').text() == 'Go Back' ? 'Go Back' : 'PAGE INFORMATION<br>(CLICK TO EXPAND)');
 
 	$('.setting-br').hover(function(){
@@ -819,7 +817,7 @@ function renderMq() {
 				'<div class="col-2 "><img class="img-fluid top-left-mq-arrow" src="'+globalPathToImgFolder+'arrows/hover_layer_arrow_up_2017.svg"></div>'+
 				'<div class="col-2 "><img class="img-fluid top-right-mq-arrow" src="'+globalPathToImgFolder+'arrows/hover_layer_arrow_up_2017.svg"></div>'+
 			'</div>'+
-			'<div class="marquee row no-gutters justify-content-center"><div class="col-8 mq-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div></div>'+
+			'<div class="marquee row no-gutters justify-content-center"><div class="col-8 mq-fix"><div class="mq-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div></div></div>'+
 			'<div class="marquee-down no-gutters row justify-content-between">'+
 				'<div class="col-2"><img class="img-fluid bott-left-mq-arrow" src="'+globalPathToImgFolder+'arrows/hover_layer_dog_arrow_left_down_2017.svg"></div>'+
 				'<div class="col-2"><img class="img-fluid bott-right-mq-arrow" src="'+globalPathToImgFolder+'arrows/hover_layer_dog_arrow_right_down_2017.svg"></div>'+
@@ -895,10 +893,9 @@ $('.container-fluid, .dogs-background-container').click(function(){
 	$('.mini-edu ').css('background-image', 'none');
 	$('.mini-edu-img-2').css('display', 'none');
 });
-$('.mini-edu, .page-information').click(function(){
-	let h = $('background-container').innerHeight()/*+'px'*/;//if wont work fix here
-	/*console.log(h)
-	if (h > $(window).height()) {
+$('.mini-edu, .page-information ').click(function(){
+	let h = $('html').height()/*+'px'*/;//if wont work fix here
+	/*if (h > $(window).height()) {
 		*/$('.helper').css('height', h+'px');
 	/*} else {
 		$('.helper').css('height', $(window).height());
