@@ -294,8 +294,9 @@ function createSlider(){
 	//settings block
 	$('.info-main').hover(
 		function(){//need to be fixed asap!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			$('.info-warning').css('display', 'block')
+			$('.info-warning').css('display', 'flex')
 			$('.info-warning').click(function(){
+				$('.black-line-for-trigger').toggle();
 				let h = $('html').height()
 				$('.helper').css('height', h+'px');
 				$('.helper').toggle();
@@ -897,6 +898,7 @@ $('.mini-edu, .page-information ').click(function(){
 	let h = $('html').height()/*+'px'*/;//if wont work fix here
 	/*if (h > $(window).height()) {
 		*/$('.helper').css('height', h+'px');
+		$('.black-line-for-trigger').toggle();
 	/*} else {
 		$('.helper').css('height', $(window).height());
 	}*/
