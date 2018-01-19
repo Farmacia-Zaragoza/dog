@@ -5,6 +5,9 @@ jQuery.fn.load = function(callback){ $(window).on("load", callback) };
 Cookies.get('c_fontSieze');
 Cookies.get('c_keyboard');
 Cookies.get('c_autoscroll');
+if (!Cookies.get('c_lang')) {
+	Cookie.set('c_lang', 'gb')
+}
 /////////////letS GOES BELOW/////////////////////////////////////////////////////////////////////
 let $testButton;
 let $nextButton;
@@ -298,7 +301,7 @@ function createSlider(){
 			$('.info-warning').click(function(){
 				$('.black-line-for-trigger').toggle();
 				let h = $('html').height()
-				$('.helper').css('height', h+'px');
+				$('.helper').css('height', h+30+'px');
 				$('.helper').toggle();
 				$('.page-information').toggleClass( "page-information-clicked");
 				$('.mini-edu').toggleClass( "mini-edu-clicked");
@@ -500,56 +503,62 @@ function createLanguageSlider() {
 		</div>
 	</div>
 	<div class="col-4">
-		<div class="dropdown show">
-			<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<img src="${globalPathToImgFolder}flags/brqx_flag_bangladesh_2016_320_200.svg" alt="" class="img-fluid">
-			</a>
-			<div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_bangladesh_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_catalunya_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_china_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_england_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_france_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_germany_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_india_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_italy_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_japan_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_portugal_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_rusia_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_spain_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-				<a class="dropdown-item" href="#">
-					<img src="${globalPathToImgFolder}flags/brqx_flag_ukraine_2016_320_200.svg" alt="" class="img-fluid">
-				</a>
-			</div>
-		</div>
+		<img src="${$('.mobile-lang-item[lang='+Cookies.get('c_lang')+']').attr('src')}" alt="" class="img-fluid active-lang">
 	</div>`);
 	} else {
 		$('#language-slider').html('<div class="col button-container"><img src="'+globalPathToImgFolder+'buttons/dog_button_2017.svg" alt="" class="img-fluid twitter-button dog-button"></div><div class="col-1 lang-arrow-prev"><button id="lang-button-prev" type="button" class="btn btn-dark"><</button></div><div class="col-6"><div class="row no-gutters" id="language-slider-container"><ul class="slides"><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_bangladesh_2016_320_200.svg" alt="" class="img-fluid flag-image"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_catalunya_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_china_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_england_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_france_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_germany_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_india_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_italy_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_japan_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_portugal_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_rusia_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_spain_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_ukraine_2016_320_200.svg" alt="" class="flag-image img-fluid"></li></ul></div></div><div class="col-1 lang-arrow-next"><button id="lang-button-next" type="button" class="btn btn-dark">&gt;</button></div><div class="col button-container text-right"><img src="'+globalPathToImgFolder+'buttons/dog_button_2017.svg" alt="" class="linkedin-button img-fluid dog-button"></div>');
 	};
+	$('.active-lang').click(function(){
+		$('body').on({	//preventing defauld events
+    	'mousewheel': function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    	}
+		});
+		$('.mobile-langs').toggle(); //toggling the view
+		$('.black-line-for-trigger').toggle();//this is for inner page issues, you shouldnt reuse it just skip this line
+		$('.lang-wrapper').click(function(){//handling clicking out of any language
+			$('.mobile-langs').toggle();//closing view
+			$('.black-line-for-trigger').toggle();//this is for inner page issues, you shouldnt reuse it just skip this line
+			$('body').unbind();//this is where we let the browser scroll/swipe. THIS IS VERY IMPORTANT. if you do not fire that function your page would remain withoit scroll/swipe
+		});
+	});
+	$('.mobile-lang-item').click(function(){//this is event for selection of language
+		$('.lang-wrapper').unbind();//we unbinding any events from this element, this is necessary to prevent future bugs if any apperas
+		$('body').unbind();//here we deleting prevents of default events from line 512
+		$('.active-lang').attr('src', $(this).attr('src'));//resolving change of image of flag language in main view
+		$('.mobile-langs').toggle();//closing view with all languages
+		Cookies.set('c_lang', $(this).attr('lang'));//this line is for cookies, skip it if you have your own way of doing it
+		$('.black-line-for-trigger').toggle();//this is for inner page issues, you shouldnt reuse it just skip this line
+	});
+	$('.lang-scroll-up').hover(function(){
+		movingUp = setInterval(function() {
+			var actualHeight = $('.lang-wrapper').height();
+			y = parseInt($('.lang-wrapper').css('top'));
+			if(y > -actualHeight/2){
+				y--;
+				$('.lang-wrapper').css('top', y+'px');
+			} else {
+				return;
+			}
+		}, 25);
+	},function(){
+		clearInterval(movingUp);
+	});
+	$('.lang-scroll-down').hover(function(){
+		movingDown = setInterval(function() {
+			var actualHeight = $('.lang-wrapper').height();
+			y = parseInt($('.lang-wrapper').css('top'));
+			if(y !=0 ){
+				y++;
+				$('.lang-wrapper').css('top', y+'px');
+			} else {
+				return;
+			}
+		}, 25);
+	},function(){
+		clearInterval(movingDown);
+	});
 	$('.flag-image, .dogSelector').hover(
 		function(){
 			selectorXposition = $(this).offset().left;
@@ -668,7 +677,6 @@ function initLangSlider() {
 /////////////LANGUAGE SLIDER CODE END////////////////////////////////////////////////////////////////
 /////////////BACKGROUND CODE BEGIN///////////////////////////////////////////////////////////////////
 $('.background-row-light').each(function(){
-
 	$(this).append(
 		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
 		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
@@ -832,7 +840,7 @@ function renderMq() {
 	} else {
 		var size = Cookies.get('c_fontSize');
 		$('.mq-text').css('font-size', size);
-	};
+	};//find it
 	$('#frame').hover(function(){
 		if (!socialChecker) {
 			$('.marquee-container').css('visibility', 'visible');
@@ -897,7 +905,7 @@ $('.container-fluid, .dogs-background-container').click(function(){
 $('.mini-edu, .page-information ').click(function(){
 	let h = $('html').height()/*+'px'*/;//if wont work fix here
 	/*if (h > $(window).height()) {
-		*/$('.helper').css('height', h+'px');
+		*/$('.helper').css('height', h+30+'px');
 		$('.black-line-for-trigger').toggle();
 	/*} else {
 		$('.helper').css('height', $(window).height());

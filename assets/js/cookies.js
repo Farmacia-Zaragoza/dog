@@ -158,4 +158,5 @@
 }));
 
 
-console.log(Cookies.get('c_fontSize'));
+console.log('Cookie for font size:',Cookies.get('c_fontSize'));
+console.log('Cookie for language:', Cookies.get('c_lang'));
