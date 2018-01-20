@@ -157,6 +157,8 @@
 	return init(function () {});
 }));
 
-
+//show all cookies in the console
 console.log('Cookie for font size:',Cookies.get('c_fontSize'));
 console.log('Cookie for language:', Cookies.get('c_lang'));
+console.log('Cookie for checking if info page is shown:', Cookies.get('c_infoPage'))
+console.log('Cookie for checking if autoscroll if on:', Cookies.get('c_autoScroll'))

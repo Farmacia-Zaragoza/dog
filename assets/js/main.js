@@ -1,14 +1,7 @@
+/*style.css for Dog page (20.01.18) [v.0.0.2]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
-///////////////////////cookies
-Cookies.get('c_fontSieze');
-Cookies.get('c_keyboard');
-Cookies.get('c_autoscroll');
-if (!Cookies.get('c_lang')) {
-	Cookie.set('c_lang', 'gb')
-}
-/////////////letS GOES BELOW/////////////////////////////////////////////////////////////////////
 let $testButton;
 let $nextButton;
 let $prevButton;
@@ -29,6 +22,46 @@ let intervalNext;
 let movingLeft;
 let socialChecker = false;
 var sandbox = true;
+///////////////////////cookies
+Cookies.get('c_fontSieze');
+Cookies.get('c_keyboard');
+if (!Cookies.get('c_lang')) {
+	Cookies.set('c_lang', 'gb')
+};
+if (Cookies.get('c_infoPage')=='shown') {
+	$('.helper').toggle();
+	$('.page-information').toggleClass( "page-information-clicked");
+	$('.mini-edu').toggleClass( "mini-edu-clicked");
+} else {
+	Cookies.set('c_infoPage', 'hidden');
+};
+if (Cookies.get('c_autoScroll')=='on') {
+	sandbox = false;
+$('.helper').append(`
+		<div class="sandbox text-center">
+			<div class="sandbox-scroll-up sandbox-scroll"></div>
+			<h6>This is sandbox where you can see how things work</h6>
+			<div class="sand-mq">
+				<div class="sand-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae, quidem nostrum quibusdam quam, eligendi veritatis perspiciatis ullam ratione libero in quia soluta reprehenderit, ipsa similique neque minima? Nobis, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+				</div>
+			</div>
+			<div class="sandbox-scroll-down sandbox-scroll"></div>
+			<a class="close-sandbox">[X]</a>
+		</div>
+	`);
+	$('.auto-scroll-button').toggleClass('clicked-info-button');
+	$('.marquee-container').toggleClass('marquee-scroll')
+	$('.sandbox').toggleClass('marquee-scroll')
+	$('.sandbox-scroll').toggle();
+	if ($('.auto-scroll-button').attr('src').search('green') > 0) {
+		$('.auto-scroll-button').attr('src', $('.auto-scroll-button').attr('src').replace('green', 'red'))
+	} else {
+		$('.auto-scroll-button').attr('src', $('.auto-scroll-button').attr('src').replace('red', 'green'))
+	}
+} else {
+	(Cookies.set('c_autoScroll', 'off'))
+}
+
 //After you create another page wich using same images add this page to the if statement below
 if($('#slider-container').attr('page') == 'main') {
 	var globalPathToImgFolder = 'img/';
@@ -37,7 +70,7 @@ if($('#slider-container').attr('page') == 'main') {
 } else if ($('#slider-container').attr('page') == 'policy'){
 	var globalPathToImgFolder = '../../img/';
 }
-console.log($('#slider-container').attr('page'))
+console.log('What page is it:',$('#slider-container').attr('page'))
 /*var facebookData;
 $.get( "https://graph.facebook.com/?id=http://dog.dbrqx.com", function( data ) {
 	facebookData =  data;
@@ -56,7 +89,7 @@ function checkDevice(){
 	} else if ($(window).width()>=1200) {
 		device = 'LargeDesktop';
 	};
-	console.log(device)
+	console.log('Actual screen size:',device)
 };
 checkDevice();
 $(window).resize(function(){location.reload();});
@@ -296,13 +329,18 @@ function createSlider(){
 	});
 	//settings block
 	$('.info-main').hover(
-		function(){//need to be fixed asap!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		function(){
 			$('.info-warning').css('display', 'flex')
 			$('.info-warning').click(function(){
 				$('.black-line-for-trigger').toggle();
 				let h = $('html').height()
 				$('.helper').css('height', h+30+'px');
 				$('.helper').toggle();
+				if (Cookies.get('c_infoPage')=='shown') {
+					Cookies.set('c_infoPage', 'hidden')
+				} else if (Cookies.get('c_infoPage')=='hidden'){
+					Cookies.set('c_infoPage', 'shown')
+				}
 				$('.page-information').toggleClass( "page-information-clicked");
 				$('.mini-edu').toggleClass( "mini-edu-clicked");
 				$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
@@ -313,14 +351,6 @@ function createSlider(){
 				$( ".info-warning" ).off( "click" );
 			});
 		});
-
-	//$('.helper').css('height', h);
-	//$('.helper').toggle( 'clip');
-	//$('.page-information').toggleClass( "page-information-clicked");
-	//$('.mini-edu').toggleClass( "mini-edu-clicked");
-	//$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
-	//$('.texted').text($('.texted').text() == 'Go Back' ? 'Go Back' : 'PAGE INFORMATION<br>(CLICK TO EXPAND)');
-
 	$('.setting-br').hover(function(){
 		$('#frame').append('<div class="brightness-container-main"><p>Brightness level</p><i class="fas fa-sun"></i><div id="slider1-main"><div class="thumb"></div></div><i class="far fa-sun"></i><div id="close-brightness-container"><i class="fas fa-times"></i></div></div>');
 		function getCoords1(elem) {
@@ -367,15 +397,6 @@ function createSlider(){
 		});
 	})
 };
-/*(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));*/
-
-/**/
 
 /////////////OTHER CODE FOR SLIDER GOES BELOW////////////////////////////////////////////////////
 function loadImages(){//loading first/next set of images
@@ -624,7 +645,6 @@ function createLanguageSlider() {
 		$('.social-close-button').css('display', 'block');
 		$('.social-close-button').click(function(){
 			$('.facebook-container').css('display', 'none');
-			//$('.social-share-button').css('display', 'none')
 			$(this).css('display', 'none');
 			socialChecker = false;
 		});
@@ -646,22 +666,6 @@ function createLanguageSlider() {
 	}, function(){
 		$('.google-container').css('dsplay', 'none')
 	});
-/*	$('.google-button, .google-main').hover(function(){
-		$('.twitter-container').css('display', 'none');
-		$('.linkedin-container').css('display', 'none');
-		$('.facebook-container').css('display', 'none');
-		$('.google-container').css('display', 'block');
-		socialChecker = true;
-	}, function(){
-		$('.social-close-button').css('display', 'block');
-		$('.social-close-button').click(function(){
-			$('.google-container').css('display', 'none');
-			$(this).css('display', 'none');
-			socialChecker = false;
-		});
-	});*/
-
-	//delete
 };
 function initLangSlider() {
 	$('#language-slider-container').flexslider({
@@ -713,11 +717,6 @@ $('.background-image').hover(function(){
 	let replaced = $(this).attr('src').replace('light', 'dark');
 	$(this).attr('src', replaced);
 });
-/*let srcsArray = $('.truck_links').attr('srcs').split(' ');//here is the sode for that dogswuare parser of links
-console.log($('.background-link').length)
-for (let i =0; i<=$('.background-link').length; i++) {
-	console.log(i)
-}*/
 /////////////BACKGROUND CODE END/////////////////////////////////////////////////////////////////////
 /////////////EDU LETTERS CODE BEGIN///////////////////////////////////////////////////////////////
 function createEduLetters() {
@@ -758,12 +757,6 @@ function createDog(){
 		actualHeight = 154
 		$('.black-happy-dog').css('height', actualHeight)
 	};
-	/*let position = $('.black-line-for-trigger').position();
-	let h = $('body').height();
-	let dogPosition = h - position.top;
-	console.log('h',  h)
-	console.log('position',  position.top)
-	$('.black-happy-dog').css("bottom", dogPosition);*/
 };
 setTimeout(createDog, 1000);
 /////////////BOTTOM DOGS CODE END/////////////////////////////////////////////////////////////////
@@ -903,19 +896,18 @@ $('.container-fluid, .dogs-background-container').click(function(){
 	$('.mini-edu-img-2').css('display', 'none');
 });
 $('.mini-edu, .page-information ').click(function(){
-	let h = $('html').height()/*+'px'*/;//if wont work fix here
-	/*if (h > $(window).height()) {
-		*/$('.helper').css('height', h+30+'px');
+	let h = $('html').height();
+		$('.helper').css('height', h+30+'px');
 		$('.black-line-for-trigger').toggle();
-	/*} else {
-		$('.helper').css('height', $(window).height());
-	}*/
-	//$('.helper').css('height', h);
 	$('.helper').toggle();
+	if (Cookies.get('c_infoPage')=='shown') {
+		Cookies.set('c_infoPage', 'hidden');
+	} else if (Cookies.get('c_infoPage')=='hidden'){
+		Cookies.set('c_infoPage', 'shown');
+	}
 	$('.page-information').toggleClass( "page-information-clicked");
 	$('.mini-edu').toggleClass( "mini-edu-clicked");
 	$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
-	//$('.texted').text($('.texted').text() == 'Go Back' ? 'Go Back' : 'PAGE INFORMATION<br>(CLICK TO EXPAND)');
 });
 
 $('.info-cloud-top-row-button').hover(function(){
@@ -954,6 +946,11 @@ $('.auto-scroll-button').click(function(){
 	$('.marquee-container').toggleClass('marquee-scroll')
 	$('.sandbox').toggleClass('marquee-scroll')
 	$('.sandbox-scroll').toggle()
+	if (Cookies.get('c_autoScroll') == 'on') {
+		Cookies.set('c_autoScroll', 'off');
+	} else if (Cookies.get('c_autoScroll') == 'off') {
+		Cookies.set('c_autoScroll', 'on');
+	}
 });
 $('.size-minus').click(function(){
 	let size = parseInt($('.mq-text').css('font-size'))
@@ -1068,42 +1065,6 @@ $('.link-text-control-left').hover(function(){
 },function(){
 	clearInterval(movingLeft);
 });
-/////////////LINKS END//////////////////////////////////////////////////////////////////////////
-/////////////SOCIALSS START/////////////////////////////////////////////////////////////////////
-/*function showLinkedin() {
-	$('.linkedin-container').css('z-index', '14')
-};
-function closeLinkedin() {
-	$('.linkedin-container').css('z-index', '11')
-	$('.linkedin-container').html('');
-	$('.linkedin-container').css('background-color', 'transparent');
-	$('.linkedin-container').css('overflow-y', 'hidden')
-};
-function showTwitter() {
-	$('.linkedin-container').css('z-index', '14')
-	$('.linkedin-container').css('overflow-y', 'scroll')
-	$('.linkedin-container').css('background-color', 'white')
-	$('.linkedin-container').hover(function(){
-		$('.linkedin-container').append('<div class="close-linkedin">Close</div>')
-		$('.close-linkedin').click(closeLinkedin);
-	},
-	function(){
-		$('.close-linkedin').remove()
-	})
-};
-function showFacebook() {
-	$('.linkedin-container').css('z-index', '14')
-	$('.linkedin-container').css('overflow-y', 'scroll')
-	$('.linkedin-container').css('background-color', 'white')
-	$('.linkedin-container').hover(function(){
-		$('.linkedin-container').append('<div class="close-linkedin">Close</div>')
-		$('.close-linkedin').click(closeLinkedin);
-	},
-	function(){
-		$('.close-linkedin').remove()
-	})
-};
-$('.facebook-button').click(showFacebook)*/
 /////////////SOCIALSS END///////////////////////////////////////////////////////////////////////
 /////////////BRIGHTNESS START///////////////////////////////////////////////////////////////////
 function getCoords(elem) {
@@ -1113,60 +1074,9 @@ function getCoords(elem) {
 		left: box.left + pageXOffset
 	};
 };
-/*
-let block1 = document.getElementById('container-fluid');
-let sliderElem1 = document.getElementById('slider1');
-let thumbElem1 = sliderElem1.children[0];
-thumbElem1.onmousedown = function(e) {
-	let thumbCoords1 = getCoords(thumbElem1);
-	let shiftX1 = e.pageX - thumbCoords1.left;
-	let sliderCoords1 = getCoords(sliderElem1);
-	document.onmousemove = function(e) {
-		let newLeft1 = e.pageX - shiftX1 - sliderCoords1.left;
-			if (newLeft1 < 0) {
-				newLeft1 = 0;
-			}
-		let rightEdge1 = sliderElem1.offsetWidth - thumbElem1.offsetWidth;
-			if (newLeft1 > rightEdge1) {
-				newLeft1 = rightEdge1;
-			}
-			block1.style.filter = 'brightness('+newLeft1/100+')';
-			block1.style.filter = 'opacity('+newLeft1/100+')';
-			thumbElem1.style.left = newLeft1 + 'px';
-		}
-		document.onmouseup = function() {
-			document.onmousemove = document.onmouseup = null;
-		};
-		return false;
-};
-thumbElem1.ondragstart = function() {
-	return false;
-};*/
-/////////////BRIGHTNESS END/////////////////////////////////////////////////////////////////////
-//share
-
-/*$('#demo1').sharrre({
-	share: {
-		facebook: true
-	},
-	buttons: {
-		googlePlus: {size: 'tall', annotation:'bubble'},
-		facebook: {layout: 'box_count'},
-		twitter: {count: 'vertical', via: '_JulienH'}
-	},
-	hover: function(api, options){
-		$(api.element).find('.buttons').show();
-	},
-	hide: function(api, options){
-		$(api.element).find('.buttons').hide();
-	},
-	enableTracking: true
-});*/
-
 setTimeout(function(){
 	let height = $('body').height();
 	$('.background-container').css('min-height', height);
 }, 1000);
-console.log($('body').height())
 
 });
