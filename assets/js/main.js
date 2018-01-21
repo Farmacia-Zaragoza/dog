@@ -1,4 +1,4 @@
-/*style.css for Dog page (20.01.18) [v.0.0.2]*/
+/*main.js for Dog page (21.01.18) [v.0.0.3]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -493,39 +493,51 @@ function getHeight() {
 /////////////LANGUAGE SLIDER CODE BEGIN//////////////////////////////////////////////////////////////
 function createLanguageSlider() {
 	if ( device == 'PortraitPhone' || device == 'LandscapePhone' || device == 'Tablet') {
-		$('#language-slider').html(`
+		/*$('#language-slider').html(`
 			<div class="col-8">
 				<div class="row no-gutters">
 					<div class="col">
 						<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_2017.svg" alt="" class="img-fluid"></a>
 					</div>
-				<div class="col-5">
-					<div class="row no-gutters">
+					<div class="col-5">
+						<div class="row no-gutters">
+							<div class="col">
+								<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_e_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
+							</div>
 						<div class="col">
-							<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_e_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
+							<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_d_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
 						</div>
-					<div class="col">
-						<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_d_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
-					</div>
-					<div class="col">
-						<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_u_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
+						<div class="col">
+							<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_u_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
+						</div>
 					</div>
 				</div>
+				<div class="col">
+					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_blue_dark_2017.svg" alt="" class="img-fluid"></a>
+				</div>
+				<div class="col">
+					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_orange_2017.svg" alt="" class="img-fluid"></a>
+				</div>
+				<div class="col">
+					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_green_2017.svg" alt="" class="img-fluid"></a>
+				</div>
 			</div>
-			<div class="col">
-				<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_blue_dark_2017.svg" alt="" class="img-fluid"></a>
-			</div>
-			<div class="col">
-				<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_orange_2017.svg" alt="" class="img-fluid"></a>
-			</div>
-			<div class="col">
-				<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_green_2017.svg" alt="" class="img-fluid"></a>
-			</div>
-		</div>
 	</div>
 	<div class="col-4">
 		<img src="${$('.mobile-lang-item[lang='+Cookies.get('c_lang')+']').attr('src')}" alt="" class="img-fluid active-lang">
-	</div>`);
+	</div>`);*/
+	$('#language-slider').html(`
+		<div class="buttons-container">
+		  <div class="small-edu-letter-e"><img src="${globalPathToImgFolder}letters/edu_letter_e_2017.svg" alt="" class="img-fluid small-edu-letter "></div>
+		  <div class=" small-edu-letter-d"><img src="${globalPathToImgFolder}letters/edu_letter_d_2017.svg" alt="" class="img-fluid small-edu-letter"></div>
+		  <div class="small-edu-letter-u"><img src="${globalPathToImgFolder}letters/edu_letter_u_2017.svg" alt="" class="img-fluid small-edu-letter "></div>
+		  <div class="dog-button-2017"><img src="${globalPathToImgFolder}buttons/dog_button_2017.svg" alt="" class="img-fluid "></div>
+		  <div class="dog-button-dark"><img src="${globalPathToImgFolder}buttons/dog_button_blue_dark_2017.svg" alt="" class="img-fluid "></div>
+		  <div class="dog-button-orange"><img src="${globalPathToImgFolder}buttons/dog_button_orange_2017.svg" alt="" class="img-fluid "></div>
+		  <div class="dog-button-green"><img src="${globalPathToImgFolder}buttons/dog_button_green_2017.svg" alt="" class="img-fluid "></div>
+		  <div class="active-lang-w"><img src="${$('.mobile-lang-item[lang='+Cookies.get('c_lang')+']').attr('src')}" alt="" class="active-lang img-fluid"></div>
+		</div>
+		`);
 	} else {
 		$('#language-slider').html('<div class="col button-container"><img src="'+globalPathToImgFolder+'buttons/dog_button_2017.svg" alt="" class="img-fluid twitter-button dog-button"></div><div class="col-1 lang-arrow-prev"><button id="lang-button-prev" type="button" class="btn btn-dark"><</button></div><div class="col-6"><div class="row no-gutters" id="language-slider-container"><ul class="slides"><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_bangladesh_2016_320_200.svg" alt="" class="img-fluid flag-image"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_catalunya_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_china_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_england_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_france_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_germany_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_india_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_italy_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_japan_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_portugal_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_rusia_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_spain_2016_320_200.svg" alt="" class="flag-image img-fluid"></li><li><img src="'+globalPathToImgFolder+'flags/brqx_flag_ukraine_2016_320_200.svg" alt="" class="flag-image img-fluid"></li></ul></div></div><div class="col-1 lang-arrow-next"><button id="lang-button-next" type="button" class="btn btn-dark">&gt;</button></div><div class="col button-container text-right"><img src="'+globalPathToImgFolder+'buttons/dog_button_2017.svg" alt="" class="linkedin-button img-fluid dog-button"></div>');
 	};

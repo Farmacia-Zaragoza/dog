@@ -1,4 +1,4 @@
-/*style.css for Dog page (19.01.18) [v.0.0.1]*/
+/*style.css for Dog page (21.01.18) [v.0.0.2]*/
 body {
   background-color: black;
   cursor: url(../../img/mouse_icon/foot.png), auto;
@@ -917,6 +917,39 @@ li.bottomli {
   border-top-right-radius: 50px;
   bottom: 0px;
   left: 0px; }
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 50px 50px;
+  grid-column-gap: 5px;
+  width: 500px;
+  margin: 0 auto;
+  grid-template-areas: "letter-e letter-e letter-d letter-d letter-u letter-u button-2017 button-dark flag flag flag" "letter-e letter-e letter-d letter-d letter-u letter-u button-green button-orange flag flag flag"; }
+
+.small-edu-letter-e {
+  grid-area: letter-e; }
+
+.small-edu-letter-d {
+  grid-area: letter-d; }
+
+.small-edu-letter-u {
+  grid-area: letter-u; }
+
+.dog-button-2017 {
+  grid-area: button-2017; }
+
+.dog-button-dark {
+  grid-area: button-dark; }
+
+.dog-button-orange {
+  grid-area: button-orange; }
+
+.dog-button-green {
+  grid-area: button-green; }
+
+.active-lang-w {
+  grid-area: flag; }
 
 @media (min-width: 576px) {
   .container-fluid {
