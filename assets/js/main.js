@@ -1,4 +1,4 @@
-/*main.js for Dog page (21.01.18) [v.0.0.3]*/
+/*main.js for Dog page (22.01.18) [v.0.0.4]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -14,7 +14,7 @@ let IMGDATA = [];
 let pathToImgFolder = $('#slider-container').attr('pathToImgFolder');
 let imgExtension = $('#slider-container').attr('imgExtension');
 let globalCounter = 0;
-let initialArraySize = 40; //THIS MUST BE EQ TO THE QUANTITY OF ITEMS ON THE FIRST JSON FILE!
+let initialArraySize = 40; //THIS MUST BE EQUAL TO THE QUANTITY OF ITEMS ON THE FIRST JSON FILE!
 let ARRAYDATA = ($('body').attr('data-array').split(" "));
 let arrayCounter = 0;
 let exit = false;
@@ -71,10 +71,6 @@ if($('#slider-container').attr('page') == 'main') {
 	var globalPathToImgFolder = '../../img/';
 }
 console.log('What page is it:',$('#slider-container').attr('page'))
-/*var facebookData;
-$.get( "https://graph.facebook.com/?id=http://dog.dbrqx.com", function( data ) {
-	facebookData =  data;
-});*/
 
 /////////////CHEKING WHAT DEVICE IS USING///////////////////////////////////////////////////////
 function checkDevice(){
@@ -126,6 +122,7 @@ function createSlider(){
 	slider.parentElement.append(
 		'<div class="row justify-content-center">'+
 			'<div class="col-12 col-lg-6 text-center" id="frame">'+
+			'<div class="open-settings">+</div>'+
 				'<div class="settings-container">'+
 					'<div data-toggle="popover" data-trigger="focus" title="Facebook" data-content="Click to show Facebook feed." class="setting-block fb-main"></div>'+
 					'<div data-toggle="popover" data-trigger="focus" title="LinkedIn" data-content="Click to show LinkedIn feed." class="setting-block lin-main"></div>'+
@@ -134,6 +131,7 @@ function createSlider(){
 					'<div data-toggle="popover" data-trigger="focus" title="Brightness" data-content="Click to adjust brightness of the page." class="setting-block setting-br"></div>'+
 					'<a href="assets/pages/policy.html"><div data-toggle="popover" data-trigger="focus" title="Cookies" data-content="Click to show cookies page." class="setting-block cookies-main"></div></a>'+
 					'<div class="setting-block info-main"></div>'+
+					//'<div class="close-settings" style="background-color: red; width:50px; height:50px;">X</div>'+
 				'</div>'+
 				'<div class="linkedin-container">'+
 					'<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>'+
@@ -308,9 +306,15 @@ function createSlider(){
 		};
 //	<img class="img-fluid" src="edu/0935x0700/edu_first_selection_2017_brqx_dog_025_0935x0700.jpg" alt="">
 	$('.google-container').kycoGooglePlusFeed2('116899029375914044550');
-	if (device === 'LargeDesktop') {
-		$('#addAlign').removeClass('align-items-center');
-	};
+	if (device === 'LargeDesktop') $('#addAlign').removeClass('align-items-center')
+	$('.open-settings').click(function(){
+		$(this).toggleClass('close-settings');
+		$('.settings-container').toggle('slide',{direction: 'right'}, '400');
+	});
+	$('.close-settings').click(function(){
+		$(this).toggleClass('close-settings');
+		$('.settings-container').toggle('slide',{direction: 'right'}, '400');
+	});
 	$testButton = $('#test-button');
 	$nextButton = $('#button-next');
 	$prevButton = $('#button-prev');
@@ -493,39 +497,6 @@ function getHeight() {
 /////////////LANGUAGE SLIDER CODE BEGIN//////////////////////////////////////////////////////////////
 function createLanguageSlider() {
 	if ( device == 'PortraitPhone' || device == 'LandscapePhone' || device == 'Tablet') {
-		/*$('#language-slider').html(`
-			<div class="col-8">
-				<div class="row no-gutters">
-					<div class="col">
-						<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_2017.svg" alt="" class="img-fluid"></a>
-					</div>
-					<div class="col-5">
-						<div class="row no-gutters">
-							<div class="col">
-								<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_e_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
-							</div>
-						<div class="col">
-							<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_d_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
-						</div>
-						<div class="col">
-							<a href="#"><img src="${globalPathToImgFolder}letters/edu_letter_u_2017.svg" alt="" class="img-fluid small-edu-letter"></a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_blue_dark_2017.svg" alt="" class="img-fluid"></a>
-				</div>
-				<div class="col">
-					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_orange_2017.svg" alt="" class="img-fluid"></a>
-				</div>
-				<div class="col">
-					<a href="#"><img src="${globalPathToImgFolder}buttons/dog_button_green_2017.svg" alt="" class="img-fluid"></a>
-				</div>
-			</div>
-	</div>
-	<div class="col-4">
-		<img src="${$('.mobile-lang-item[lang='+Cookies.get('c_lang')+']').attr('src')}" alt="" class="img-fluid active-lang">
-	</div>`);*/
 	$('#language-slider').html(`
 		<div class="buttons-container">
 		  <div class="small-edu-letter-e"><img src="${globalPathToImgFolder}letters/edu_letter_e_2017.svg" alt="" class="img-fluid small-edu-letter "></div>

@@ -1,3 +1,4 @@
+/*style.css for Dog page (22.01.18) [v.0.0.3]*/
 body
 	background-color: black
 	cursor: url(../../img/mouse_icon/foot.png), auto
@@ -565,10 +566,34 @@ li.bottomli
 .background-link
 	cursor: pointer
 	z-index: 11
+.open-settings
+	display: block
+	right: 15px
+	top: 15px
+	z-index: 15
+	position: absolute
+	background-color: #6495ED
+	color: white
+	width: 50px
+	height: 50px
+	line-height: 50px
+	border-radius: 50px
+	font-size: 40px
+	transition-property: all
+	transition-duration: 0.4s
+	opacity: 0.5
+	cursor: pointer
+	&:hover
+		opacity: 1
+.close-settings
+	background-color: #B22222
+	transform: rotate(45deg)
+	opacity: 1
 .settings-container
+	display: none
 	position: absolute
 	top: 20px
-	right: 20px
+	right: 70px
 	height: 50px
 	z-index: 14
 .setting-block
