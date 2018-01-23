@@ -161,4 +161,5 @@
 console.log('Cookie for font size:',Cookies.get('c_fontSize'));
 console.log('Cookie for language:', Cookies.get('c_lang'));
 console.log('Cookie for checking if info page is shown:', Cookies.get('c_infoPage'))
-console.log('Cookie for checking if autoscroll if on:', Cookies.get('c_autoScroll'))
+console.log('Cookie for checking if autoscroll is on:', Cookies.get('c_autoScroll'))
+console.log('Cookie for checking if keyboard is on:', Cookies.get('c_keyboard'))

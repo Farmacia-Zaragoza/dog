@@ -1,4 +1,4 @@
-/*main.js for Dog page (22.01.18) [v.0.0.4]*/
+/*main.js for Dog page (23.01.18) [v.0.0.5]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -24,7 +24,6 @@ let socialChecker = false;
 var sandbox = true;
 ///////////////////////cookies
 Cookies.get('c_fontSieze');
-Cookies.get('c_keyboard');
 if (!Cookies.get('c_lang')) {
 	Cookies.set('c_lang', 'gb')
 };
@@ -60,6 +59,16 @@ $('.helper').append(`
 	}
 } else {
 	(Cookies.set('c_autoScroll', 'off'))
+}
+if (Cookies.get('c_keyboard')=='on'){
+	$('.keyboard-button').toggleClass('clicked-info-button');
+	if ($('.keyboard-button').attr('src').search('green') > 0) {
+		$('.keyboard-button').attr('src', $('.keyboard-button').attr('src').replace('green', 'red'))
+	} else {
+		$('.keyboard-button').attr('src', $('.keyboard-button').attr('src').replace('red', 'green'))
+	}
+} else {
+	Cookies.set('c_keyboard', 'off');
 }
 
 //After you create another page wich using same images add this page to the if statement below
@@ -810,7 +819,7 @@ function renderMq() {
 		'</div>'
 	);
 	$('#frame').append($marquee);
-	$('.marquee-container').css('visibility', 'visible');
+	$('.marquee-container').css('visibility', 'hidden');
 	if (!Cookies.get('c_fontSize')) {///COOKIES FONT SIZE HERE!!!!
 		$('.mq-text').css('font-size', '14px');
 	} else {
@@ -954,6 +963,14 @@ $('.info-cloud-bot-row-button').click(function(){
 		$(this).attr('src', $(this).attr('src').replace('green', 'red'))
 	} else {
 		$(this).attr('src', $(this).attr('src').replace('red', 'green'))
+	}
+});
+$('.keyboard-button').click(function(){
+	$(this).toggleClass('clicked-info-button')
+	if (Cookies.get('c_keyboard') == 'on') {
+		Cookies.set('c_keyboard', 'off');
+	} else if (Cookies.get('c_keyboard') == 'off') {
+		Cookies.set('c_keyboard', 'on');
 	}
 });
 $('.info-cloud-bot-row-button').mouseenter(function(){
