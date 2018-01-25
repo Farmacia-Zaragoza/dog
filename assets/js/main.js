@@ -1,4 +1,4 @@
-/*main.js for Dog page (23.01.18) [v.0.0.5]*/
+/*main.js for Dog page (24.01.18) [v.0.0.6]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -34,6 +34,19 @@ if (Cookies.get('c_infoPage')=='shown') {
 } else {
 	Cookies.set('c_infoPage', 'hidden');
 };
+if (Cookies.get('c_infoPage')=='shown') {
+$('body').on({  //preventing defauld events
+		'mousewheel': function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
+	});
+	$('.black-line-for-trigger').css('display', 'none')
+	$("body").toggleClass("hidden");
+} else {
+	$('body').unbind()
+}
+
 if (Cookies.get('c_autoScroll')=='on') {
 	sandbox = false;
 $('.helper').append(`
@@ -357,6 +370,19 @@ function createSlider(){
 				$('.page-information').toggleClass( "page-information-clicked");
 				$('.mini-edu').toggleClass( "mini-edu-clicked");
 				$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
+				$("body").toggleClass("hidden");
+				if (Cookies.get('c_infoPage')=='shown') {
+					console.log('prevent')
+				$('body').on({  //preventing defauld events
+			      'mousewheel': function(e) {
+			        e.preventDefault();
+			        e.stopPropagation();
+			      }
+			    });
+				} else {
+					$("body").toggleClass("hidden");
+					$('body').unbind()
+				}
 			})
 		},function(){
 			$('.info-warning').mouseout(function(){
@@ -674,33 +700,33 @@ function initLangSlider() {
 /////////////BACKGROUND CODE BEGIN///////////////////////////////////////////////////////////////////
 $('.background-row-light').each(function(){
 	$(this).append(
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_003.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_004.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_005.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_006.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_007.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_008.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_009.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_010.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_011.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_012.svg" alt="" class="background-image img-fluid"></a></div>')
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_003.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_004.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_005.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_006.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_007.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_008.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_009.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_010.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_011.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_012.svg" alt="" class="background-image img-fluid"></a></div>')
 });
 $('.background-row-dark').each(function(){
 	$(this).append(
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_013.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_014.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_015.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_016.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_017.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_018.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_019.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_020.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_021.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_022.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a src="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>')
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_013.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_014.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_015.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_016.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_017.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_018.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_019.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_020.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_021.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_022.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>')
 });
 $('.background-image').hover(function(){
 	let replaced = $(this).attr('src').replace('dark', 'light');
@@ -754,7 +780,11 @@ setTimeout(createDog, 1000);
 /////////////BOTTOM DOGS CODE END/////////////////////////////////////////////////////////////////
 /////////////COOKIESS CODE START//////////////////////////////////////////////////////////////////
 function cookieAppear() {
-	$('.cookie-div').html('<div class="cookie-container text-center col-10"><span>Este portal utiliza cookies para mejorar la experiencia en la navegación. Al continuar usádolo autorizas que se guarde esta información en tu navegador. Algunas cookies son fundamentales para que nuestro sitio pueda funcionar ; otras nos ayudan a mejorar la experiencia del usuari]. Al usar este sitio ,das tu consentimiento a la colocación de estas cookies en tu equipo. Consulta nuestra </span><br><a href="#">Política de Cookies</a></div>')
+	$('.cookie-div').html('<div class="cookie-container text-center col-10"><span>Este portal utiliza cookies para mejorar la experiencia en la navegación. Al continuar usádolo autorizas que se guarde esta información en tu navegador. Algunas cookies son fundamentales para que nuestro sitio pueda funcionar ; otras nos ayudan a mejorar la experiencia del usuari]. Al usar este sitio ,das tu consentimiento a la colocación de estas cookies en tu equipo. Consulta nuestra </span><br><a href="#">Política de Cookies</a></div>');
+	$('.cookie-div').html(`
+			<div class="cookie-button cookie-button-ok">Ok</div>
+			<div class="cookie-button cookie-button-cancel">Cancel</div>
+		`)
 };
 function cookieHide(){
 	$('.cookie-container').hide('drop', {direction: 'up'}, 3000);
@@ -900,6 +930,20 @@ $('.mini-edu, .page-information ').click(function(){
 	$('.page-information').toggleClass( "page-information-clicked");
 	$('.mini-edu').toggleClass( "mini-edu-clicked");
 	$('.texted').text($('.texted').text() == 'PAGE INFORMATION (CLICK TO EXPAND)' ? 'Go Back' : 'PAGE INFORMATION (CLICK TO EXPAND)');
+	if (Cookies.get('c_infoPage')=='shown') {
+		console.log('prevent')
+	$('body').on({  //preventing defauld events
+      'mousewheel': function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+		$("body").toggleClass("hidden");
+	} else {
+		console.log('unprevent')
+		$('body').unbind()
+		$("body").toggleClass("hidden");
+	}
 });
 
 $('.info-cloud-top-row-button').hover(function(){

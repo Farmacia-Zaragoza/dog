@@ -1,4 +1,7 @@
-/*style.css for Dog page (23.01.18) [v.0.0.4] */
+/*style.css for Dog page (24.01.18) [v.0.0.5] */
+.hidden {
+  overflow: hidden; }
+
 body {
   background-color: black;
   cursor: url(../../img/mouse_icon/foot.png), auto;
