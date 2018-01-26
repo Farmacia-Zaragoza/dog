@@ -1,4 +1,6 @@
-/*style.css for Dog page (23.01.18) [v.0.0.4]*/
+/*style.css for Dog page (24.01.18) [v.0.0.5]*/
+.hidden
+	overflow: hidden
 body
 	background-color: black
 	cursor: url(../../img/mouse_icon/foot.png), auto
@@ -841,6 +843,23 @@ li.bottomli
 	grid-area: button-green
 .active-lang-w
 	grid-area: flag
+.cookie-button
+	position: absolute
+	width: 50px
+	height: 50px
+	padding: 10px
+	border: 5px solid #CD853F
+	color: #CD853F
+	cursor: pointer
+	border-radius: 10px
+	&:hover
+		background-color: white
+.cookie-button-ok
+	right: 50px
+	bottom: 10px
+.cookie-button-cancel
+	right: 110px
+	bottom: 10px
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px)

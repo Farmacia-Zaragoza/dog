@@ -1,4 +1,4 @@
-/*main.js for Dog page (24.01.18) [v.0.0.6]*/
+/*main.js for Dog page (26.01.18) [v.0.0.7]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -162,7 +162,7 @@ function createSlider(){
 					'<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/brqxng/" data-format="inline"  data-width="300" data-related="false"></script>'+
 				'</div>'+
 				'<div class="facebook-container">'+
-					/*'<div id="demo1" data-url="http://dog.dbrqx.com/index2/" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>'+*/
+					/*'<div id="demo1" data-url="http://https://www.dog.dbrqx.com/index2/" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>'+*/
 					'<div class="facebook-warning">Please log in to Facebook to see facebook feed!</div>'+
 					'<div class="fb-page" data-href="https://www.facebook.com/edubuscanovia/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">'+
 						'<blockquote cite="https://www.facebook.com/edubuscanovia/" class="fb-xfbml-parse-ignore">'+
@@ -170,7 +170,7 @@ function createSlider(){
 						'</blockquote>'+
 					'</div>'+
 					'<div id="fb-root"></div>'+
-					'<div class="fb-like" data-href="http://dog.dbrqx.com/index2/" data-layout="button_count" data-size="large" data-action="recommend" data-show-faces="true"></div>'+
+					'<div class="fb-like" data-href="http://https://www.dog.dbrqx.com/index2/" data-layout="button_count" data-size="large" data-action="recommend" data-show-faces="true"></div>'+
 				'</div>'+
 				'<div class="twitter-container">'+
 					'<a class="twitter-follow-button" href="https://twitter.com/EduBuscaNovia">Follow @EduBuscaNovia</a>'+
@@ -700,33 +700,33 @@ function initLangSlider() {
 /////////////BACKGROUND CODE BEGIN///////////////////////////////////////////////////////////////////
 $('.background-row-light').each(function(){
 	$(this).append(
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_003.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_004.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_005.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_006.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_007.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_008.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_009.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_010.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_011.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_012.svg" alt="" class="background-image img-fluid"></a></div>')
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_003.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_004.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_005.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_006.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_007.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_008.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_009.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_010.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_011.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_012.svg" alt="" class="background-image img-fluid"></a></div>')
 });
 $('.background-row-dark').each(function(){
 	$(this).append(
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_013.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_014.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_015.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_016.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_017.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_018.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_019.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_020.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_021.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_022.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-ligh col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
-		'<div class="background-item background-item-dark col"><a href="#" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>')
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_013.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_014.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_015.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_016.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_017.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_018.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_019.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_020.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_021.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_022.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-ligh col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_001.svg" alt="" class="background-image img-fluid"></a></div>'+
+		'<div class="background-item background-item-dark col"><a href="https://www.dog.dbrqx.com/index2" class="background-link"><img src="'+globalPathToImgFolder+'square_dogs/dog_dark_002.svg" alt="" class="background-image img-fluid"></a></div>')
 });
 $('.background-image').hover(function(){
 	let replaced = $(this).attr('src').replace('dark', 'light');
@@ -780,11 +780,17 @@ setTimeout(createDog, 1000);
 /////////////BOTTOM DOGS CODE END/////////////////////////////////////////////////////////////////
 /////////////COOKIESS CODE START//////////////////////////////////////////////////////////////////
 function cookieAppear() {
-	$('.cookie-div').html('<div class="cookie-container text-center col-10"><span>Este portal utiliza cookies para mejorar la experiencia en la navegación. Al continuar usádolo autorizas que se guarde esta información en tu navegador. Algunas cookies son fundamentales para que nuestro sitio pueda funcionar ; otras nos ayudan a mejorar la experiencia del usuari]. Al usar este sitio ,das tu consentimiento a la colocación de estas cookies en tu equipo. Consulta nuestra </span><br><a href="#">Política de Cookies</a></div>');
 	$('.cookie-div').html(`
-			<div class="cookie-button cookie-button-ok">Ok</div>
-			<div class="cookie-button cookie-button-cancel">Cancel</div>
-		`)
+		<div class="cookie-container text-center col-10">
+			<span>Este portal utiliza cookies para mejorar la experiencia en la navegación. Al continuar usádolo autorizas que se guarde esta información en tu navegador. Algunas cookies son fundamentales para que nuestro sitio pueda funcionar ; otras nos ayudan a mejorar la experiencia del usuari]. Al usar este sitio ,das tu consentimiento a la colocación de estas cookies en tu equipo. Consulta nuestra </span><br>
+			<a href="#">Política de Cookies</a>
+			<div class="cookie-button cookie-button-ok">
+				<i class="fas fa-check fa-1x"></i>
+			</div>
+			<div class="cookie-button cookie-button-cancel">
+				<i class="fas fa-times fa-1x"></i>
+			</div>
+		</div>`);
 };
 function cookieHide(){
 	$('.cookie-container').hide('drop', {direction: 'up'}, 3000);

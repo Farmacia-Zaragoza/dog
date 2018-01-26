@@ -1,4 +1,4 @@
-/*style.css for Dog page (24.01.18) [v.0.0.5] */
+/*style.css for Dog page (26.01.18) [v.0.0.6] */
 .hidden {
   overflow: hidden; }
 
@@ -978,6 +978,26 @@ li.bottomli {
 
 .active-lang-w {
   grid-area: flag; }
+
+.cookie-button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: 5px solid #CD853F;
+  color: #CD853F;
+  cursor: pointer;
+  border-radius: 10px; }
+  .cookie-button:hover {
+    background-color: white; }
+
+.cookie-button-ok {
+  right: 50px;
+  bottom: 10px; }
+
+.cookie-button-cancel {
+  right: 110px;
+  bottom: 10px; }
 
 @media (min-width: 576px) {
   .container-fluid {
