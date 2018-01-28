@@ -1,4 +1,4 @@
-/*style.css for Dog page (28.01.18) [v.0.0.6] */
+/*style.css for Dog page (28.01.18) [v.0.0.7] */
 .social-link-button {
   background-image: url(../../img/buttons/dog_button_2017.svg);
   background-position: center;
@@ -999,11 +999,11 @@ li.bottomli {
     background-color: white; }
 
 .cookie-button-ok {
-  right: 50px;
+  right: 5px;
   bottom: 10px; }
 
 .cookie-button-cancel {
-  right: 110px;
+  right: 60px;
   bottom: 10px; }
 
 @media (min-width: 576px) {
@@ -1140,6 +1140,14 @@ li.bottomli {
   .helper {
     background-image: url(../../img/edu_best/brqx_tablet_ret07lag_pers_-_El_Retiro_07_-_DSCN073120_2048.jpg); } }
 @media (min-width: 992px) {
+  .cookie-button-ok {
+    right: 50px;
+    bottom: 10px; }
+
+  .cookie-button-cancel {
+    right: 110px;
+    bottom: 10px; }
+
   .mini-edu {
     z-index: 11; }
 
