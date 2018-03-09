@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<!--policy.html for Dog page (28.01.18) [v.0.0.2]-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Dog v.2 - Policy</title>
+<title>Dog v.2</title>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="../../libs/bootstrap4/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../fassets/libs/bootstrap4/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css"/>
-<link rel="stylesheet" href="../../libs/googleplus/jquery.kyco.googleplusfeed2.css">
+<link rel="stylesheet" href="../../fassets/libs/googleplus/jquery.kyco.googleplusfeed2.css">
 <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
 <meta property="og:url"           content="http://dog.dbrqx.com/index2/" />
@@ -17,14 +18,14 @@
 <meta property="og:description"   content="Dog site" />
 <meta property="og:image"         content="http://dog.dbrqx.com/index2/img/buttons/dog_button_2017.svg" />
 
-<link rel="shortcut icon" href="../../img/favicon/dog_icon_edu_2017.png" type="image/png">
+<link rel="shortcut icon" href="img/favicon/dog_icon_edu_2017.png" type="image/png">
 </head>
-<body data-array="../../data/simple_000.json ../../data/simple_001.json ../../data/simple_002.json ../../data/simple_003.json ../../data/simple_004.json ../../data/simple_005.json"> 
+<body data-array="data/simple_000.json data/simple_001.json data/simple_002.json data/simple_003.json data/simple_004.json data/simple_005.json">
 <div id="fb-root"></div>
-<script src="../js/fb.js"></script>
+<script src="assets/js/fb.js"></script>
 <div id="container-fluid" class="container-fluid">
 <!-- BACKGROUND BEGIN -->
-	<div class="background-links-data" srcs="faceboook.com google.com"></div>	<!-- add as many srcs as you want, all will be sorted and append to the link -->
+	<div id="truck_links" srcs="faceboook.com google.com"></div>	<!-- add as many srcs as you want, all will be sorted and append to the link -->
 	<div class="row background-container">
 		<div class="row background-row background-row-dark justify-content-center">
 		</div>
@@ -62,26 +63,172 @@
 <div class="row align-items-center " id="language-slider"></div>
 <!-- LANGUAGE SLIDER END -->
 
-<!-- SLIDER BEGIN-->
-
+<!-- SLIDER BEGIN -->
 <div class="row">
 	<div class="col-2 edu-letters-container-left desktop"></div>
-	<div id="slider-container" page="policy" class="col-12 col-lg-8"
-		pathToImgFolder="../../edu/0935x0700/"
+	<div id="slider-container" page="main" class="col-12 col-lg-8"
+		pathToImgFolder="edu/0935x0700/"
 		imgExtension=".jpg"
 		numberOfNavImagesLargeDesktop="6"
 		numberOfNavImagesDesktop="6"
 		numberOfNavImagesTablet="4"
 		numberOfNavImagesLandscapePhone="4"
 		numberOfNavImagesPortraitPhone="4">
+		<div id="frame" style="height: 400px">
+			<div class="marquee-container">
+					<div class="marquee-up no-gutters row justify-content-between">
+						<div class="col-2 ">
+							<img class="img-fluid top-left-mq-arrow" src="http://dog.dbrqx.com/index2/img/arrows/hover_layer_arrow_up_2017.svg">
+						</div>
+						<div class="col-2 ">
+							<img class="img-fluid top-right-mq-arrow" src="http://dog.dbrqx.com/index2/img/arrows/hover_layer_arrow_up_2017.svg">
+						</div>
+					</div>
+					<div class="marquee row no-gutters justify-content-center">
+						<div class="col-8 mq-text" style="text-align: left; font-size: 12px; margin-bottom: 0px!important;">
+							<div class="justify-content-start">
+			                    <section>
+			                        <p class="">
+			                            In DBRQX we use cookies with the objective of providing
+			                            a better service and providing you with a better experience
+			                            in your navigation. 
+			                            We want to inform you clearly and accurately about the cookies we use,
+			                            detailing below, which is a cookie,
+			                            what it serves,
+			                            what types of cookies we use,
+			                            what are their purpose and how you can configure or disable them if you want.
+			                        </p>
+			                    </section>
+			                    <section>
+			                        <h2 class="c" style="color: #CD5C5C">
+			                            What are cookies?
+			                        </h2>
+			                        <p class="">
+			                            A "Cookie" is a small file that is stored on the user's computer,
+			                            tablet, smartphone or any other device with navigation information.
+			                        </p>
+			                        <p class="">
+			                            Cookies help us improve the quality of our website.
+			                        </p>
+			                        <p class="">
+			                            Cookies are essential for the operation of the internet,
+			                            providing innumerable advantages,
+			                            facilitating the navigation and usability of our web.
+			                            En no case the cookies could damage your equipment.
+			                            By contrast,
+			                            those who are active helps us to know the performance of the website,
+			                            we must modify and problems that may arise.
+			                        </p>
+			                    </section>
+			                    <section>
+			                        <h2 class="" style="color: #CD5C5C">
+			                            What types of cookies do we use?
+			                        </h2>
+			                        <h3 class="" style="color: #CD5C5C">
+			                            Own cookies:
+			                        </h3>
+			                        <p class="">
+			                            They are those that are sent to your team from our own computers
+			                            or domains and from which we render the service that you request.
+			                        </p>
+			                         <h3 class="" style="color: #CD5C5C">
+			                            Third-party cookies:
+			                        </h3>
+			                        <p class="">
+			                            They are those that are sent to your team from a team or domain that is not managed by us,
+			                            but by another collaborating entity.
+			                            Such as those used by social networks,
+			                            or by external content such as Google Maps.
+			                         </p>
+			                         <h3 class="" style="color: #CD5C5C">
+			                            Session Cookies:
+			                        </h3>
+			                        <p class="">
+			                            They are temporary cookies that remain in the cookie file of your browser until you leave the website,
+			                            so none is recorded on the hard disk of your computer.
+			                            The information obtained through these cookies,
+			                            serve to analyze traffic patterns on the web.
+			                            In the long run,
+			                            this allows us to provide a better experience to improve the content and facilitate its use.
+			                         </p>
+			                          <h3 class="" style="color: #CD5C5C">
+			                              Persistent Cookies:
+			                          </h3>
+			                        <p class="">
+			                            They are stored on the hard drive and
+			                            our website reads them every time you make a new visit.
+			                            A permanent website has a specific expiration date.
+			                            The cookie will stop working after that date or when you delete it.
+			                            These cookies are generally used to facilitate purchase and registration services.
+			                         </p>
+			                    </section>
+			                    <section>
+			                        <h2 class="" style="color: #CD5C5C">
+			                            List of used cookies.
+			                        </h2>
+			                        <ol>
+			                            <li class="">IF_EVER_VISTED</li>
+			                        </ol>
+			                    </section>
+			                    <section>
+			                        <h2 class="" style="color: #CD5C5C">
+			                            How we obtain your consent to install cookies, and how you can revoke it
+			                        </h2>
+			                        <p class="">
+			                            By accessing the Website for the first time
+			                            you will receive a notice about the use of cookies.
+			                            In this first layer,
+			                            you will be informed about the type of cookies we use,
+			                            the purposes for which we use them,
+			                            and you will be provided a link to this Cookies Policy,
+			                            where you can find more detailed information.
+			                            If you continue browsing,
+			                            you will be giving your consent for us to install the cookies as described in this policy.
+			                        </p>
+			                        <p class="">
+			                            You may revoke your consent for the use of cookies at any time.
+			                            To do so,
+			                            you have the possibility to disable cookies by modifying the privacy settings of your browser.
+			                            Here you can find links where you can find detailed information on how to configure cookies in the main browsers:
+			                        </p>
+			                        <p class="">
+			                            <strong>Chrome - </strong>
+			                            <a href="https://support.google.com/chrome/answer/95647?hl=en">
+			                            	https://support.google.com/chrome/answer/95647?hl=en
+			                            </a>
+			                        </p>
+			                         <p class="">
+			                            <strong>Internet Explorer - </strong>
+			                            <a href="http://windows.microsoft.com/en-us/windows7/how-to-manage-cookies-in-internet-explorer-9">
+			                            	http://windows.microsoft.com/en-us/windows7/how-to-manage-cookies-in-internet-explorer-9
+			                            </a>
+			                        </p>
+			                         <p class="">
+			                            <strong>Firefox - </strong>
+			                            <a href="https://support.mozilla.org/en/kb/activate-y-disable-cookies-which-sitios-we">
+			                            	https://support.mozilla.org/en/kb/activate-y-disable-cookies-which-sitios-we
+			                            </a>
+			                        </p>
+			                    </section>
+		                  </div>
+					</div></div>
+					<div class="marquee-down no-gutters row justify-content-between">
+						<div class="col-2"><img class="img-fluid bott-left-mq-arrow" src="http://dog.dbrqx.com/index2/img/arrows/hover_layer_dog_arrow_left_down_2017.svg"></div>
+						<div class="col-2"><img class="img-fluid bott-right-mq-arrow" src="http://dog.dbrqx.com/index2/img/arrows/hover_layer_dog_arrow_right_down_2017.svg"></div>
+					</div>
+				</div>
+		</div>
 	</div>
+	<div class="col-2 edu-letters-container-right desktop"></div>
 </div>
 <!-- SLIDER END -->
 
 <!-- LINKS BEGIN -->
 <div class="row links align-items-center">
 	<div class="col desktop button-container">
-		<img src="../../img/buttons/dog_button_2017.svg" alt="" class="img-fluid dog-button facebook-button">
+		<a href="http://dog.dbrqx.com/index2/">
+			<div data-toggle="popover" data-trigger="focus" title="" data-content="Click to go to the ... page" class="social-link-button" data-original-title="Page name"></div>
+		</a>
 	</div>
 	<div class="col-12 col-lg-8">
 		<div class="row text-center links-container no-gutters">
@@ -130,13 +277,15 @@
 		</div>
 	</div>
 	<div class="col text-right desktop button-container">
-		<img src="../../img/buttons/dog_button_2017.svg" alt="" class="img-fluid dog-button google-button">
+		<a href="http://dog.dbrqx.com/index2/">
+			<div style="float: right" data-toggle="popover" data-trigger="focus" title="" data-content="Click to go to the ... page" class="social-link-button" data-original-title="Page name"></div>
+		</a>
 	</div>
 </div>
 <!-- LINKS END -->
 
 <!--BOTTOM ROW IMAGES BEGIN-->
-<div class="row justify-content-center tablet" id="bottom-row-images"
+<div class="row justify-content-center tablet" id="bottom-row-images" style="margin-bottom: 35px;"
 	numberOfBottomImagesLargeDesktop="8"
 	numberOfBottomImagesDesktop="6"
 	numberOfBottomImagesTablet="5"
@@ -146,7 +295,7 @@
 <!--BOTTOM ROW IMAGES END-->
 
 <!-- BOTTOM HIDDEN SLIDER BEGIN-->
-<div class="row desktop largeDesktop">
+<div class="row">
 	<div class="col black-line-for-trigger"></div>
 	<div class="col bottom-slider bottom-trigger">
 		<div class="bottom-hide bottom-hide-left text-center">HIDE</div>
@@ -180,37 +329,56 @@
 
 <!--HELPER PAGE BEGIN-->
 <div class="mini-edu desktop">
-	<img class="mini-edu-img-1" src="../../img/round_square/edu_footprint_dark_200_2017.svg" alt="mini-dog-helper">
-	<img class="mini-edu-img-2" src="../../img/round_square/mini_edu_100_2017.svg" alt="mini-dog-helper">
+	<img class="mini-edu-img-1" src="img/round_square/edu_footprint_dark_200_2017.svg" alt="mini-dog-helper">
+	<img class="mini-edu-img-2" src="img/round_square/mini_edu_100_2017.svg" alt="mini-dog-helper">
 </div>
 <div class="page-information">
 	<a href="#" class="texted">PAGE INFORMATION (CLICK TO EXPAND)</a>
 </div>
 <div class="helper">
-	<img src="../../img/dogs/edu_version_03_real_dog.svg" alt="" class="img-fluid">
+	<img src="img/dogs/edu_version_03_real_dog.svg" alt="" class="img-fluid">
 	<div class="info-cloud">
-		<img src="../../img/box/brqx_2017_dev_live_green_050.svg" data-content="Some text about dev/live" data-header="Dev/live" alt="" class="info-cloud-top-row-button cloud-live-button">
-		<img src="../../img/box/brqx_2017_html_php_green_050.svg" data-content="Some text about html/php" data-header="Html/Php" alt="" class="info-cloud-top-row-button cloud-html-php-button">
-		<img src="../../img/box/brqx_2017_http_https_green_050.svg" data-content="Some text about http/https" data-header="Https/Http" alt="" class="info-cloud-top-row-button cloud-http-https-button">
-		<img src="../../img/box/brqx_2017_anon_auth_green_050.svg" data-content="Some text about anon/auth" data-header="Anon/Auth" alt="" class="info-cloud-top-row-button cloud-anon-auth-button">
-		<img src="../../img/box/brqx_2017_user_human_red_050.svg" data-content="Some text about human/robot" data-header="Human/Robot" alt="" class="info-cloud-top-row-button cloud-user-human-button">
-		<div class="info-cloud-bot-row-button text-button">
-			<img src="../../img/symbols/brqx_plus_symbol_040_2017.svg" class="change-text-size size-plus" alt="+">
-			<img src="../../img/symbols/brqx_minus_symbol_040_2017.svg" class="change-text-size size-minus" alt="-">
+		<img src="img/box/brqx_2017_dev_live_green_050.svg" data-content="Some text about dev/live" data-header="Dev/live" alt="" class="info-cloud-top-row-button cloud-live-button">
+		<img src="img/box/brqx_2017_html_php_green_050.svg" data-content="Some text about html/php" data-header="Html/Php" alt="" class="info-cloud-top-row-button cloud-html-php-button">
+		<img src="img/box/brqx_2017_http_https_green_050.svg" data-content="Some text about http/https" data-header="Https/Http" alt="" class="info-cloud-top-row-button cloud-http-https-button">
+		<img src="img/box/brqx_2017_anon_auth_green_050.svg" data-content="Some text about anon/auth" data-header="Anon/Auth" alt="" class="info-cloud-top-row-button cloud-anon-auth-button">
+		<img src="img/box/brqx_2017_user_human_red_050.svg" data-content="Some text about human/robot" data-header="Human/Robot" alt="" class="info-cloud-top-row-button cloud-user-human-button">
+		<div data-toggle="popover" data-trigger="focus" title="Font size" data-content="Click to increase|decrease text's font size." class="info-cloud-bot-row-button text-button">
+			<img src="img/symbols/brqx_plus_symbol_040_2017.svg" class="change-text-size size-plus" alt="+">
+			<img src="img/symbols/brqx_minus_symbol_040_2017.svg" class="change-text-size size-minus" alt="-">
 		</div>
-		<img src="../../img/box/brqx_2017_keyboard_enabled_green_100.svg" alt="" class="info-cloud-bot-row-button keyboard-button">
-		<img src="../../img/box/brqx_2017_auto_scroll_enabled_green_100.svg" alt="" class="info-cloud-bot-row-button auto-scroll-button">
+		<img data-toggle="popover" data-trigger="focus" title="Navigation" data-content="Click to enable|disable navigation with keyboard." src="img/box/brqx_2017_keyboard_enabled_green_100.svg" alt="" class="info-cloud-bot-row-button keyboard-button" >
+		<img data-toggle="popover" data-trigger="focus" title="Scroll" data-content="Click to enable|disable auto scrolling of text." src="img/box/brqx_2017_auto_scroll_enabled_green_100.svg" alt="" class="info-cloud-bot-row-button auto-scroll-button" >
 	</div>
-	<img src="../../img/bones/gold_dog_bone_2017.svg" alt="" class="helper-bone">
+	<img src="img/bones/gold_dog_bone_2017.svg" alt="" class="helper-bone">
 	<div class="info-cloud-helper-block"><span class="info-cloud-helper-title">Lorem ipsum dolor sit amet</span><br><span class="info-cloud-helper-text">consectetur adipisicingelit. Molestias voluptates earum itaque excepturi voluptatum est unde cumque cupiditate enim fugiat eius ipsa officia sunt consequatur, distinctio tempore consectetur delectusquam.</span></div>
-	<!-- <div class="brightness-container">
-		<p>Brightness level: </p>
-		<div id="slider1">
-			<div class="thumb"></div>
-		</div>
-	</div> -->
 </div>
 <!--HELPER PAGE END-->
+<div class="mobile-langs">
+	<div class="lang-scroll lang-scroll-up">
+		<i class="fa fa-arrow-up fa-5x" aria-hidden="true"></i>
+	</div>
+	<div class="langs-list">
+		<div class="lang-wrapper">
+			<img lang="bg" src="img/flags/brqx_flag_bangladesh_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="ct" src="img/flags/brqx_flag_catalunya_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="ch" src="img/flags/brqx_flag_china_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="gb" src="img/flags/brqx_flag_england_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="fr" src="img/flags/brqx_flag_france_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="gr" src="img/flags/brqx_flag_germany_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="in" src="img/flags/brqx_flag_india_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="it" src="img/flags/brqx_flag_italy_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="jp" src="img/flags/brqx_flag_japan_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="pt" src="img/flags/brqx_flag_portugal_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="ru" src="img/flags/brqx_flag_rusia_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="sp" src="img/flags/brqx_flag_spain_2016_320_200.svg" alt="" class="mobile-lang-item">
+			<img lang="uk" src="img/flags/brqx_flag_ukraine_2016_320_200.svg" alt="" class="mobile-lang-item">
+		</div>
+	</div>
+	<div class="lang-scroll lang-scroll-down">
+		<i class="fa fa-arrow-down fa-5x" aria-hidden="true"></i>
+	</div>
+</div>
 <!-- hidden tags for links below -->
 <a id="facebook-link" href="https://www.facebook.com/edubuscanovia/"></a>
 <a id="twitter-link" href="https://twitter.com/EduBuscaNovia"></a>
@@ -218,14 +386,16 @@
 <a id="linkedin-link" href="https://www.linkedin.com/in/brqxng/"></a>
 </div><!-- container ends -->
 <script src="https://apis.google.com/js/platform.js"></script>
-<script src="../../libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="../../fassets/libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="../../libs/bootstrap4/js/bootstrap.min.js"></script>
+<script src="../../fassets/libs/bootstrap4/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.js"></script>
-<script src="../../libs/googleplus/jquery.kyco.googleplusfeed2.js"></script>
+<script src="../../fassets/libs/googleplus/jquery.kyco.googleplusfeed2.js"></script>
 <!-- <script src="libs/Sharrre-master/jquery.sharrre.min.js"></script> -->
-<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="../js/cookies.js"></script>
+<script src="../js/policy.js"></script>
 
 <div class="mydiv"></div>
 

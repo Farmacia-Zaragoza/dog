@@ -1,4 +1,7 @@
-/*style.css for Dog page (28.01.18) [v.0.0.7] */
+/*style.css for Dog page (24.02.18) [v.0.0.14] */
+.hiddendata {
+  display: none !important; }
+
 .social-link-button {
   background-image: url(../../img/buttons/dog_button_2017.svg);
   background-position: center;
@@ -1005,6 +1008,36 @@ li.bottomli {
 .cookie-button-cancel {
   right: 60px;
   bottom: 10px; }
+
+.triggerLayer0 {
+  display: none; }
+
+.brightness-container-main {
+  display: none; }
+
+.triggerLayer1 {
+  display: none; }
+
+.triggerLayer2 {
+  display: none; }
+
+.triggerLayer3 {
+  display: none; }
+
+.triggerLayer4 {
+  display: none; }
+
+.helper {
+  display: none; }
+
+.sandbox {
+  display: none; }
+
+.cookie-div {
+  display: none; }
+
+.marquee-container {
+  display: none; }
 
 @media (min-width: 576px) {
   .container-fluid {
