@@ -1,7 +1,2 @@
-**/live
-**/img
-**/backup
-**/edu
-/fassets
-
-json_test/
+/img
+/edu

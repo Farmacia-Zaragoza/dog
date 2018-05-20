@@ -1,9 +1,8 @@
-/*style.css for Dog page (24.02.18) [v.0.0.14] */
+/*style.css for Dog page (06.05.18) [v.1.0.0_DEV]*/
 .hiddendata {
   display: none !important; }
 
 .social-link-button {
-  background-image: url(../../img/buttons/dog_button_2017.svg);
   background-position: center;
   background-repeat: no-repeat;
   width: 70px;
@@ -49,7 +48,6 @@ body {
 
 .link-container {
   z-index: 11;
-  background-image: url(../../img/bones/white_dog_bone_2017.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -77,12 +75,10 @@ a#dropdownMenuLink {
 .bottom-slider {
   z-index: 12;
   height: 30px;
-  background-color: transparent;
-  background-image: url(../../img/dogs/brqx_bottom_dogs_01_2017.png); }
+  background-color: transparent; }
 
 .top-row-image-container {
   z-index: 11;
-  background-image: url(../../img/square/gold_square_0640_2017.png);
   background-size: 100% 100%;
   padding: 6px 6px 6px 6px;
   margin-right: 10px;
@@ -116,7 +112,6 @@ a#dropdownMenuLink {
   cursor: auto !important;
   overflow: hidden;
   z-index: 11;
-  background-image: url(../../img/square/gold_square_0640_2017.png);
   background-size: 100% 100%;
   background-color: white;
   padding-top: 15px;
@@ -155,7 +150,6 @@ a#dropdownMenuLink {
 
 .bottom-row-image-container {
   z-index: 11;
-  background-image: url(../../img/square/gold_square_0640_2017.png);
   background-size: 100% 100%;
   padding: 6px 6px 6px 6px;
   margin-right: 10px;
@@ -378,7 +372,6 @@ li.bottomli {
   top: 0px;
   left: 0px;
   background-color: white;
-  background-image: url(../../img/edu_best/brqx_mobile_ret07lag_pers_-_El_Retiro_07_-_DSCN073048_2048.jpg);
   background-size: 100% 100%;
   display: none;
   overflow: hidden;
@@ -412,8 +405,7 @@ li.bottomli {
   width: 680px;
   position: absolute;
   left: 0% !important;
-  top: 20% !important;
-  background: url(../../img/round_square/cloud_green_300_2017.svg); }
+  top: 20% !important; }
 
 .info-cloud-top-row-button {
   height: 60px;
@@ -741,41 +733,7 @@ li.bottomli {
 #close-brightness-container {
   cursor: pointer; }
 
-.setting-br {
-  background-image: url(../../img/symbols/brqx_brightness_green_050_2017.svg); }
-  .setting-br:hover {
-    background-image: url(../../img/symbols/brqx_brightness_red_050_2017.svg); }
 
-.info-main {
-  background-image: url(../../img/symbols/brqx_information_green_050_2017.svg); }
-  .info-main:hover {
-    background-image: url(../../img/symbols/brqx_information_red_050_2017.svg); }
-
-.fb-main {
-  background-image: url(../../img/symbols/brqx_facebook_green_050_2017.svg); }
-  .fb-main:hover {
-    background-image: url(../../img/symbols/brqx_facebook_red_050_2017.svg); }
-
-.lin-main {
-  background-image: url(../../img/symbols/brqx_linkedin_green_050_2017.svg); }
-  .lin-main:hover {
-    background-image: url(../../img/symbols/brqx_linkedin_red_050_2017.svg); }
-
-.google-main {
-  background-image: url(../../img/symbols/brqx_google_plus_green_050_2017.svg); }
-  .google-main:hover {
-    background-image: url(../../img/symbols/brqx_google_plus_red_050_2017.svg); }
-
-.twitter-main {
-  background-image: url(../../img/symbols/brqx_twitter_green_050_2017.svg); }
-  .twitter-main:hover {
-    background-image: url(../../img/symbols/brqx_twitter_red_050_2017.svg); }
-
-.cookies-main {
-  background-position: center;
-  background-image: url(../../img/symbols/brqx_cookies_green_050_2017.svg); }
-  .cookies-main:hover {
-    background-image: url(../../img/symbols/brqx_cookies_red_050_2017.svg); }
 
 .fb-like {
   position: absolute !important;
@@ -1170,8 +1128,7 @@ li.bottomli {
   .info-cloud {
     left: 20% !important; }
 
-  .helper {
-    background-image: url(../../img/edu_best/brqx_tablet_ret07lag_pers_-_El_Retiro_07_-_DSCN073120_2048.jpg); } }
+  .helper { } }
 @media (min-width: 992px) {
   .cookie-button-ok {
     right: 50px;
@@ -1216,7 +1173,6 @@ li.bottomli {
     top: 0px;
     left: 0px;
     background-color: white;
-    background-image: url(../../img/bg/dog_click_hover_behaviour_background_2017.svg);
     background-size: 100% 100%;
     display: none;
     overflow: hidden;
@@ -1250,8 +1206,7 @@ li.bottomli {
     width: 680px;
     position: absolute;
     left: 5% !important;
-    top: 20% !important;
-    background: url(../../img/round_square/cloud_green_300_2017.svg); }
+    top: 20% !important; }
 
   .info-cloud-top-row-button {
     height: 60px;

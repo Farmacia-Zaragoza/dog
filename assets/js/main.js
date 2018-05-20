@@ -1,4 +1,4 @@
-/*main.js for Dog page (28.02.18) [v.0.0.18]*/
+/*main.js for Dog page (09.05.18) [v.1.0.2_DEV]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -11,8 +11,8 @@ let counter = 0;
 let device = 'string';
 let slider = {};
 let IMGDATA = [];
-let pathToImgFolder = $('#slider-container').attr('path');
-let imgExtension = $('#slider-container').attr('ext');
+let pathToImgFolder = $('#slider-container').attr('path').toLowerCase();
+let imgExtension = $('#slider-container').attr('ext').toLowerCase();
 let globalCounter = 0;
 let initialArraySize = 40; //THIS MUST BE EQUAL TO THE QUANTITY OF ITEMS ON THE FIRST JSON FILE!
 let ARRAYDATA = ($('body').attr('data-array').split(" "));
@@ -26,7 +26,8 @@ var resnumbers = ($('#slider-container').attr('resnumbers').split(","));
 var resnumber;
 var resNumbersTop = ($('#top-row-images').attr('resnumbers').split(","));
 var resnumberTop;
-var dynamicImgPath = 'img';
+var dynamicPath = $('body').attr('path').toLowerCase();
+var format = $('body').attr('format').toLowerCase();
 
 ///////////////////////cookies
 Cookies.get('c_fontSieze');
@@ -81,11 +82,11 @@ if (Cookies.get('c_keyboard')=='on'){
 
 //After you create another page wich using same images add this page to the if statement below
 if($('#slider-container').attr('page') == 'main') {
-	var globalPathToImgFolder = `${window.location.href}${dynamicImgPath}/`;
+	var globalPathToImgFolder = dynamicPath;
 } else if ($('#slider-container').attr('page') == 'product'){
-	var globalPathToImgFolder = `${window.location.href}${dynamicImgPath}/`;
+	var globalPathToImgFolder = dynamicPath;
 } else if ($('#slider-container').attr('page') == 'policy'){
-	var globalPathToImgFolder = `${window.location.href}${dynamicImgPath}/`;
+	var globalPathToImgFolder = dynamicPath;
 }
 console.log('What page is it:',$('#slider-container').attr('page'))
 
@@ -168,7 +169,7 @@ function createSlider(){
 			$('<div class="col img-holder no-gutters text-center"><img class="img-fluid nav-img" src="" alt=""></div>').insertAfter($('#button-prev').parent());
 		}
 	} else if ($('#slider-container').attr('page') == 'product'){
-			$('.big-img').attr('src', `${globalPathToImgFolder}edu/0935x0700/edu_first_selection_2017_brqx_dog_025_0935x0700.jpg`)
+			$('.big-img').attr('src', `${globalPathToImgFolder}edu/0935x0700/edu_first_selection_2017_brqx_dog_025_0935x0700${format}`)
 			$('#slider-container').css('margin-bottom', '100px')
 
 	} else if ($('#slider-container').attr('page') == 'policy'){
@@ -482,7 +483,7 @@ function createLanguageSlider() {
 		function(){
 			selectorXposition = $(this).offset().left;
 			selectorYposition = $(this).offset().top;
-			$('.container-fluid').append(`<img class="dogSelector" src="${globalPathToImgFolder}selector/edu_dog_selectorb_2017.svg">`);
+			$('.container-fluid').append(`<img class="dogSelector" src="${globalPathToImgFolder}selector/edu_dog_selectorb_2017${format}">`);
 			$('.dogSelector').css('position', 'absolute');
 			$('.dogSelector').css('left', selectorXposition-5);
 			$('.dogSelector').css('top', selectorYposition-56);
@@ -614,15 +615,15 @@ function createDog(){
 	let eduDog = percentsDog[2];
 	let actualHeight;
 	if (whichDog > blackDog && whichDog < happyDog+blackDog) {
-		$('.black-happy-dog').attr('src', 'img/dogs/edu_version_01_happy_dog.svg'); //happy
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_01_happy_dog'+format); //happy
 		actualHeight = 316
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog < blackDog){
-		$('.black-happy-dog').attr('src', 'img/dogs/edu_version_02_pixel_dog.svg'); //black
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_02_pixel_dog'+format); //black
 		actualHeight = 386
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog > happyDog+blackDog){
-		$('.black-happy-dog').attr('src', 'img/dogs/edu_version_03_real_dog.png'); //edu
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_03_real_dog'+format); //edu
 		actualHeight = 154
 		$('.black-happy-dog').css('height', actualHeight)
 	};
@@ -739,7 +740,7 @@ $('.mini-edu ').hover(function(){
 	$('.mini-edu-img-1').css('display', 'none');
 	$('.page-information').css('display', 'block');
 	$('.mini-edu-img-2').css('display', 'block');
-	$('.mini-edu ').css('background-image', 'url('+globalPathToImgFolder+'round_square/dog_footprint_200_2017.svg)');
+	$('.mini-edu ').css('background-image', 'url('+globalPathToImgFolder+'round_square/dog_footprint_200_2017'+format+')');
 }, function(){
 	$('.mini-edu-img-1').css('display', 'block');
 	$('.mini-edu ').css('width', '60px');
@@ -901,12 +902,12 @@ $('.info-cloud-bot-row-button').mouseenter(function(){
 /////////////HELPER END/////////////////////////////////////////////////////////////////////////
 /////////////LINKS START////////////////////////////////////////////////////////////////////////
 $('.link-container').hover(function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/gold_dog_bone_2017.svg)')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/gold_dog_bone_2017'+format+')')
 },function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/white_dog_bone_2017.svg)')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/white_dog_bone_2017'+format+')')
 });
 $('.link-container').click(function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/orange_dog_bone_2017.svg)')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/orange_dog_bone_2017'+format+')')
 })
 let linkWidth = $('.link-text').width();
 $('.link-text-control-right').hover(function(){
@@ -951,6 +952,55 @@ function getCoords(elem) {
 setTimeout(function(){
 	let height = $('body').height();
 	$('.background-container').css('min-height', height);
+	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/brqx_bottom_dogs_01_2017'+format+')');
+$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
+$('#frame').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
+$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
+$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/brqx_mobile_ret07lag_pers_-_El_Retiro_07_-_DSCN073048_2048'+format+')');
+$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/cloud_green_300_2017'+format+'');
+$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_green_050_2017'+format+')');
+$('.setting-br').hover(function(){
+	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_red_050_2017'+format+')');
+},function(){
+	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_green_050_2017'+format+')');
+});
+$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_green_050_2017'+format+')');
+$('.info-main').hover(function(){
+	$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_red_050_2017'+format+')');
+},function(){ $('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_green_050_2017'+format+')');
+});
+$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_green_050_2017'+format+')');
+$('.fb-main').hover(function(){
+	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_red_050_2017'+format+')');
+},function(){
+	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_green_050_2017'+format+')');
+});
+$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_green_050_2017'+format+')');
+$('.lin-main').hover(function(){
+	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_red_050_2017'+format+')');
+},function(){
+	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_green_050_2017'+format+')');
+});
+$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_green_050_2017'+format+')');
+$('.google-main').hover(function(){
+	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_red_050_2017'+format+')');
+},function(){
+	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_green_050_2017'+format+')');
+});
+$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_green_050_2017'+format+')');
+$('.twitter-main').hover(function(){
+	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_red_050_2017'+format+')');
+},function(){
+	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_green_050_2017'+format+')');
+});
+$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_green_050_2017'+format+')');
+$('.cookies-main').hover(function(){
+	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_red_050_2017'+format+')');
+},function(){
+	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_green_050_2017'+format+')');
+});
+$('.link-container').css('background-image', 'url('+dynamicPath+'bones/white_dog_bone_2017'+format+')')
 }, 1000);
+
 
 });
