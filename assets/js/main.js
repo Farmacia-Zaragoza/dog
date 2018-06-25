@@ -1,4 +1,4 @@
-/*main.js for Dog page (09.05.18) [v.1.0.2_DEV]*/
+/*main.js for Dog page (24.06.18) [v.1.0.3_DEV]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -169,7 +169,8 @@ function createSlider(){
 			$('<div class="col img-holder no-gutters text-center"><img class="img-fluid nav-img" src="" alt=""></div>').insertAfter($('#button-prev').parent());
 		}
 	} else if ($('#slider-container').attr('page') == 'product'){
-			$('.big-img').attr('src', `${globalPathToImgFolder}edu/0935x0700/edu_first_selection_2017_brqx_dog_025_0935x0700${format}`)
+			var currImgName = $('.big-img').attr('img-name');
+			$('.big-img').attr('src', `${globalPathToImgFolder}edu/${currImgName}${format}`)
 			$('#slider-container').css('margin-bottom', '100px')
 
 	} else if ($('#slider-container').attr('page') == 'policy'){
@@ -483,7 +484,8 @@ function createLanguageSlider() {
 		function(){
 			selectorXposition = $(this).offset().left;
 			selectorYposition = $(this).offset().top;
-			$('.container-fluid').append(`<img class="dogSelector" src="${globalPathToImgFolder}selector/edu_dog_selectorb_2017${format}">`);
+			let cursorImgName = $('.container-fluid').attr('cursor-img-name');
+			$('.container-fluid').append(`<img class="dogSelector" src="${globalPathToImgFolder}selector/${cursorImgName}${format}">`);
 			$('.dogSelector').css('position', 'absolute');
 			$('.dogSelector').css('left', selectorXposition-5);
 			$('.dogSelector').css('top', selectorYposition-56);
@@ -615,15 +617,18 @@ function createDog(){
 	let eduDog = percentsDog[2];
 	let actualHeight;
 	if (whichDog > blackDog && whichDog < happyDog+blackDog) {
-		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_01_happy_dog'+format); //happy
+		let happyDogImg = $('.black-happy-dog').attr('happy-dog-img');
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+happyDogImg+format); //happy
 		actualHeight = 316
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog < blackDog){
-		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_02_pixel_dog'+format); //black
+		let pixelDogImg = $('.black-happy-dog').attr('pixel-dog-img');
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+pixelDogImg+format); //black
 		actualHeight = 386
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog > happyDog+blackDog){
-		$('.black-happy-dog').attr('src', dynamicPath+'dogs/edu_version_03_real_dog'+format); //edu
+		let realDogImg = $('.black-happy-dog').attr('real-dog-img');
+		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+realDogImg+format); //edu
 		actualHeight = 154
 		$('.black-happy-dog').css('height', actualHeight)
 	};
@@ -735,12 +740,13 @@ function renderMq() {
 /////////////HELPER START///////////////////////////////////////////////////////////////////////
 console.log('helper loaded')
 $('.mini-edu ').hover(function(){
+	var miniEduHoverImg = $('.mini-edu').attr('mini-edu-hover-img-name');
 	$('.mini-edu ').css('width', '200px');
 	$('.mini-edu ').css('height', '200px');
 	$('.mini-edu-img-1').css('display', 'none');
 	$('.page-information').css('display', 'block');
 	$('.mini-edu-img-2').css('display', 'block');
-	$('.mini-edu ').css('background-image', 'url('+globalPathToImgFolder+'round_square/dog_footprint_200_2017'+format+')');
+	$('.mini-edu ').css('background-image', 'url('+globalPathToImgFolder+'round_square/'+miniEduHoverImg+format+')');
 }, function(){
 	$('.mini-edu-img-1').css('display', 'block');
 	$('.mini-edu ').css('width', '60px');
@@ -901,13 +907,18 @@ $('.info-cloud-bot-row-button').mouseenter(function(){
 });
 /////////////HELPER END/////////////////////////////////////////////////////////////////////////
 /////////////LINKS START////////////////////////////////////////////////////////////////////////
+	var goldBoneImg = $('.links-container').attr('gold-bone');
+
+	var whiteBoneImg = $('.links-container').attr('white-bone');
+
+	var orangeBoneImg = $('.links-container').attr('orange-bone');
 $('.link-container').hover(function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/gold_dog_bone_2017'+format+')')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/'+goldBoneImg+format+')')
 },function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/white_dog_bone_2017'+format+')')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/'+whiteBoneImg+format+')')
 });
 $('.link-container').click(function(){
-	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/orange_dog_bone_2017'+format+')')
+	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/'+orangeBoneImg+format+')')
 })
 let linkWidth = $('.link-text').width();
 $('.link-text-control-right').hover(function(){
@@ -952,54 +963,63 @@ function getCoords(elem) {
 setTimeout(function(){
 	let height = $('body').height();
 	$('.background-container').css('min-height', height);
-	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/brqx_bottom_dogs_01_2017'+format+')');
-$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
-$('#frame').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
-$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/gold_square_0640_2017'+format+')');
-$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/brqx_mobile_ret07lag_pers_-_El_Retiro_07_-_DSCN073048_2048'+format+')');
-$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/cloud_green_300_2017'+format+'');
-$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_green_050_2017'+format+')');
-$('.setting-br').hover(function(){
-	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_red_050_2017'+format+')');
-},function(){
-	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/brqx_brightness_green_050_2017'+format+')');
-});
-$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_green_050_2017'+format+')');
-$('.info-main').hover(function(){
-	$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_red_050_2017'+format+')');
-},function(){ $('.info-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_information_green_050_2017'+format+')');
-});
-$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_green_050_2017'+format+')');
-$('.fb-main').hover(function(){
-	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_red_050_2017'+format+')');
-},function(){
-	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_facebook_green_050_2017'+format+')');
-});
-$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_green_050_2017'+format+')');
-$('.lin-main').hover(function(){
-	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_red_050_2017'+format+')');
-},function(){
-	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_linkedin_green_050_2017'+format+')');
-});
-$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_green_050_2017'+format+')');
-$('.google-main').hover(function(){
-	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_red_050_2017'+format+')');
-},function(){
-	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_google_green_050_2017'+format+')');
-});
-$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_green_050_2017'+format+')');
-$('.twitter-main').hover(function(){
-	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_red_050_2017'+format+')');
-},function(){
-	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_twitter_green_050_2017'+format+')');
-});
-$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_green_050_2017'+format+')');
-$('.cookies-main').hover(function(){
-	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_red_050_2017'+format+')');
-},function(){
-	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/brqx_cookies_green_050_2017'+format+')');
-});
-$('.link-container').css('background-image', 'url('+dynamicPath+'bones/white_dog_bone_2017'+format+')')
+	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/'+$('.bottom-slider').attr('bottom-slider-background-img')+format+')');
+	$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('top-image-container')+format+')');
+	$('#frame').css('background-image', 'url('+dynamicPath+'square/'+$('#frame').attr('frame-background-img')+format+')');
+	$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('bottom-row-container')+format+')');
+	$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/'+$('.helper').attr('helper-background-img')+imgExtension+')');
+	$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/'+$('.info-cloud').attr('info-cloud-row-background')+format+'');
+
+	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background')+format+')');
+	$('.setting-br').hover(function(){
+		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background-hover')+format+')');
+	},function(){
+		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background')+format+')');
+	});
+
+	$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background')+format+')');
+	$('.info-main').hover(function(){
+		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background-hover')+format+')');
+	},function(){ 
+		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background')+format+')');
+	});
+
+	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background')+format+')');
+	$('.fb-main').hover(function(){
+		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background-hover')+format+')');
+	},function(){
+		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background')+format+')');
+	});
+
+	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background')+format+')');
+	$('.lin-main').hover(function(){
+		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background-hover')+format+')');
+	},function(){
+		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background')+format+')');
+	});
+
+	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background')+format+')');
+	$('.google-main').hover(function(){
+		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background-hover')+format+')');
+	},function(){
+		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background')+format+')');
+	});
+
+	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background')+format+')');
+	$('.twitter-main').hover(function(){
+		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background-hover')+format+')');
+	},function(){
+		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background')+format+')');
+	});
+
+	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background')+format+')');
+	$('.cookies-main').hover(function(){
+		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background-hover')+format+')');
+	},function(){
+		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background')+format+')');
+	});
+	
+	$('.link-container').css('background-image', 'url('+dynamicPath+'bones/'+$('.link-container').attr('white-dog-bone')+format+')')
 }, 1000);
 
 
