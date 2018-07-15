@@ -1,4 +1,4 @@
-/*main.js for Dog page (24.06.18) [v.1.0.3_DEV]*/
+/*main.js for Dog page (15.07.18) [v.1.0.4_DEV]*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -484,7 +484,7 @@ function createLanguageSlider() {
 		function(){
 			selectorXposition = $(this).offset().left;
 			selectorYposition = $(this).offset().top;
-			let cursorImgName = $('.container-fluid').attr('cursor-img-name');
+			let cursorImgName = $('.container-fluid').attr('img-name');
 			$('.container-fluid').append(`<img class="dogSelector" src="${globalPathToImgFolder}selector/${cursorImgName}${format}">`);
 			$('.dogSelector').css('position', 'absolute');
 			$('.dogSelector').css('left', selectorXposition-5);
@@ -617,17 +617,17 @@ function createDog(){
 	let eduDog = percentsDog[2];
 	let actualHeight;
 	if (whichDog > blackDog && whichDog < happyDog+blackDog) {
-		let happyDogImg = $('.black-happy-dog').attr('happy-dog-img');
+		let happyDogImg = $('.black-happy-dog').attr('option-a');
 		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+happyDogImg+format); //happy
 		actualHeight = 316
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog < blackDog){
-		let pixelDogImg = $('.black-happy-dog').attr('pixel-dog-img');
+		let pixelDogImg = $('.black-happy-dog').attr('option-b');
 		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+pixelDogImg+format); //black
 		actualHeight = 386
 		$('.black-happy-dog').css('height', actualHeight)
 	} else if (whichDog > happyDog+blackDog){
-		let realDogImg = $('.black-happy-dog').attr('real-dog-img');
+		let realDogImg = $('.black-happy-dog').attr('option-c');
 		$('.black-happy-dog').attr('src', dynamicPath+'dogs/'+realDogImg+format); //edu
 		actualHeight = 154
 		$('.black-happy-dog').css('height', actualHeight)
@@ -740,7 +740,7 @@ function renderMq() {
 /////////////HELPER START///////////////////////////////////////////////////////////////////////
 console.log('helper loaded')
 $('.mini-edu ').hover(function(){
-	var miniEduHoverImg = $('.mini-edu').attr('mini-edu-hover-img-name');
+	var miniEduHoverImg = $('.mini-edu').attr('img-hover');
 	$('.mini-edu ').css('width', '200px');
 	$('.mini-edu ').css('height', '200px');
 	$('.mini-edu-img-1').css('display', 'none');
@@ -907,11 +907,11 @@ $('.info-cloud-bot-row-button').mouseenter(function(){
 });
 /////////////HELPER END/////////////////////////////////////////////////////////////////////////
 /////////////LINKS START////////////////////////////////////////////////////////////////////////
-	var goldBoneImg = $('.links-container').attr('gold-bone');
+	var goldBoneImg = $('.links-container').attr('option-a');
 
-	var whiteBoneImg = $('.links-container').attr('white-bone');
+	var whiteBoneImg = $('.links-container').attr('option-b');
 
-	var orangeBoneImg = $('.links-container').attr('orange-bone');
+	var orangeBoneImg = $('.links-container').attr('option-c');
 $('.link-container').hover(function(){
 	$(this).css('background-image', 'url('+globalPathToImgFolder+'bones/'+goldBoneImg+format+')')
 },function(){
@@ -963,63 +963,63 @@ function getCoords(elem) {
 setTimeout(function(){
 	let height = $('body').height();
 	$('.background-container').css('min-height', height);
-	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/'+$('.bottom-slider').attr('bottom-slider-background-img')+format+')');
+	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/'+$('.bottom-slider').attr('img-name')+format+')');
 	$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('top-image-container')+format+')');
-	$('#frame').css('background-image', 'url('+dynamicPath+'square/'+$('#frame').attr('frame-background-img')+format+')');
+	$('#frame').css('background-image', 'url('+dynamicPath+'square/'+$('#frame').attr('img-name')+format+')');
 	$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('bottom-row-container')+format+')');
 	$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/'+$('.helper').attr('helper-background-img')+imgExtension+')');
 	$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/'+$('.info-cloud').attr('info-cloud-row-background')+format+'');
 
-	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background')+format+')');
+	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('img-name')+format+')');
 	$('.setting-br').hover(function(){
-		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background-hover')+format+')');
+		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('img-hover')+format+')');
 	},function(){
-		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('setting-br-background')+format+')');
+		$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('img-name')+format+')');
 	});
 
-	$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background')+format+')');
+	$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('img-name')+format+')');
 	$('.info-main').hover(function(){
-		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background-hover')+format+')');
+		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('img-hover')+format+')');
 	},function(){ 
-		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('info-main-background')+format+')');
+		$('.info-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.info-main').attr('img-name')+format+')');
 	});
 
-	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background')+format+')');
+	$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('img-name')+format+')');
 	$('.fb-main').hover(function(){
-		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background-hover')+format+')');
+		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('img-hover')+format+')');
 	},function(){
-		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('fb-main-background')+format+')');
+		$('.fb-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.fb-main').attr('img-name')+format+')');
 	});
 
-	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background')+format+')');
+	$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('img-name')+format+')');
 	$('.lin-main').hover(function(){
-		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background-hover')+format+')');
+		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('img-hover')+format+')');
 	},function(){
-		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('lin-main-background')+format+')');
+		$('.lin-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.lin-main').attr('img-name')+format+')');
 	});
 
-	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background')+format+')');
+	$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('img-name')+format+')');
 	$('.google-main').hover(function(){
-		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background-hover')+format+')');
+		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('img-hover')+format+')');
 	},function(){
-		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('oogle-main-background')+format+')');
+		$('.google-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.google-main').attr('img-name')+format+')');
 	});
 
-	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background')+format+')');
+	$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('img-name')+format+')');
 	$('.twitter-main').hover(function(){
-		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background-hover')+format+')');
+		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('img-hover')+format+')');
 	},function(){
-		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('twitter-background')+format+')');
+		$('.twitter-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.twitter-main').attr('img-name')+format+')');
 	});
 
-	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background')+format+')');
+	$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('img-name')+format+')');
 	$('.cookies-main').hover(function(){
-		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background-hover')+format+')');
+		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('img-hover')+format+')');
 	},function(){
-		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('cookeis-background')+format+')');
+		$('.cookies-main').css('background-image', 'url('+dynamicPath+'symbols/'+$('.cookies-main').attr('img-name')+format+')');
 	});
 	
-	$('.link-container').css('background-image', 'url('+dynamicPath+'bones/'+$('.link-container').attr('white-dog-bone')+format+')')
+	$('.link-container').css('background-image', 'url('+dynamicPath+'bones/'+$('.link-container').attr('option-a')+format+')')
 }, 1000);
 
 
