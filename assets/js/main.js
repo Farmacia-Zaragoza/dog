@@ -964,11 +964,11 @@ setTimeout(function(){
 	let height = $('body').height();
 	$('.background-container').css('min-height', height);
 	$('.bottom-slider').css('background-image', 'url('+dynamicPath+'dogs/'+$('.bottom-slider').attr('img-name')+format+')');
-	$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('top-image-container')+format+')');
+	$('.top-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('img-top')+format+')');
 	$('#frame').css('background-image', 'url('+dynamicPath+'square/'+$('#frame').attr('img-name')+format+')');
-	$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('bottom-row-container')+format+')');
-	$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/'+$('.helper').attr('helper-background-img')+imgExtension+')');
-	$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/'+$('.info-cloud').attr('info-cloud-row-background')+format+'');
+	$('.bottom-row-image-container').css('background-image', 'url('+dynamicPath+'square/'+$('#imgs-name-holder').attr('img-bottom')+format+')');
+	$('.helper').css('background-image', 'url('+dynamicPath+'edu_best/'+$('.helper').attr('img-name')+imgExtension+')');
+	$('.info-cloud').css('background-image', 'url('+dynamicPath+'round_square/'+$('.info-cloud').attr('img-name')+format+'');
 
 	$('.setting-br').css('background-image', 'url('+dynamicPath+'symbols/'+$('.setting-br').attr('img-name')+format+')');
 	$('.setting-br').hover(function(){
