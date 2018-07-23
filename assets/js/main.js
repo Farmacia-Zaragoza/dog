@@ -1,4 +1,4 @@
-/*main.js for Dog page (15.07.18) [v.1.0.4_DEV]*/
+/*main.js for Dog page (24.07.18) [v.1.0.5_DEV]-*/
 $( document ).ready(function() {
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
@@ -795,8 +795,9 @@ $('.mini-edu, .page-information ').click(function(){
 $('.info-cloud-top-row-button').hover(function(){
 	$('.sandbox').remove();
 	sandbox = true;
-	$('.info-cloud-helper-title').html($(this).attr('data-header'))
-	$('.info-cloud-helper-text').html($(this).attr('data-content'))
+	var actualClass = $(this).attr('id');
+	$('.info-cloud-helper-title').html($(`.${actualClass}`).attr('data-header'))
+	$('.info-cloud-helper-text').html($(`.${actualClass}`).attr('data-content'))
 	if (device=="Desktop"||device=="LargeDesctop"){
 	if($('.helper-bone').css('display') == 'none'){
 			$('.helper-bone').toggle('drop', {direction: 'left'}, 'fast');
