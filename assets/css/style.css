@@ -40,8 +40,6 @@ body {
   cursor: url(../../img/mouse_icon/foot.png), auto; }
   .background-item a {
     cursor: url(../../img/mouse_icon/foot.png), auto; }
-    .background-item a img {
-      height: 100%; }
 
 .background-item-dark {
   background-color: rgba(230, 230, 250, 0.2); }
